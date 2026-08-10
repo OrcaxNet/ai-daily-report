@@ -1,0 +1,21 @@
+{% extends "base.html.j2" %}
+{% block title %}AI 日报 · 更正记录{% endblock %}
+{% block content %}
+<section>
+  <h1>更正记录</h1>
+  {% if corrections %}
+  <ul class="corrections-list">
+    {% for c in corrections %}
+    <li>
+      <strong>{{ c.date }} · {{ c.item_ref }}</strong>
+      <p>更正前：{{ c.before }}</p>
+      <p>更正后：{{ c.after }}</p>
+      <p>原因：{{ c.reason }}（{{ c.by }}）</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>暂无更正记录。如发现错误，请通过本页底部说明与我们联系。</p>
+  {% endif %}
+</section>
+{% endblock %}

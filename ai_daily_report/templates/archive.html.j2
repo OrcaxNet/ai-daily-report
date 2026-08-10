@@ -1,0 +1,16 @@
+{% extends "base.html.j2" %}
+{% block title %}AI 日报 · 归档{% endblock %}
+{% block content %}
+<section>
+  <h1>历史日报归档</h1>
+  {% if dates %}
+  <ul class="archive-list">
+    {% for d in dates %}
+    <li><a href="{{ base_url }}/daily/{{ d }}.html">{{ d }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>暂无历史日报。</p>
+  {% endif %}
+</section>
+{% endblock %}

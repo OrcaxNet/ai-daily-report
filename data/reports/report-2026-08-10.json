@@ -1,0 +1,381 @@
+{
+  "report_date": "2026-08-10",
+  "generated_at": "2026-08-10T18:39:43+08:00",
+  "content_window_start": "2026-08-09T06:30:00+08:00",
+  "content_window_end": "2026-08-10T06:30:00+08:00",
+  "item_count": 15,
+  "category_counts": {
+    "基础理论": 2,
+    "模型进展": 7,
+    "Agent 进展": 2,
+    "AI 应用": 2,
+    "可选观察": 2
+  },
+  "corrections": [],
+  "data_cutoff": "2026-08-10T06:30:00+08:00",
+  "ai_disclosure": "本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。",
+  "items": [
+    {
+      "item_id": "76d63cd34aed",
+      "title_cn": "基于分类法的开源AI风险缓解工具分析",
+      "summary_cn": "企业LLM应用从试点走向生产，人工危害识别与缓解难以规模化，现有开源工具生态碎片化且与治理框架不对齐。该论文提出结构化协议，将21款主流开源LLM评估与安全工具的能力映射到扩展版MIT AI风险缓解与响应分类法的32个子类别中。分析显示工具高度集中于技术与运营控制，治理、法律监管、金融市场相关控制存在明显空白。",
+      "why_it_matters_cn": "为企业选型AI风险工具、识别治理缺口提供了系统化的对照框架，可直接用于风险分层架构设计。",
+      "tags": [
+        "AI治理",
+        "风险评估",
+        "开源工具"
+      ],
+      "category": "可选观察",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07446v1",
+      "source_published_at": "2026-08-07T17:33:09+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 84.0,
+      "dedup_key": "e3d0a9bb1b83d796",
+      "title_original": "Taxonomy-Driven Analysis of Open-Source AI Risk Mitigation Tools"
+    },
+    {
+      "item_id": "cb7c5c59241c",
+      "title_cn": "TRIAL：面向智能体强化学习的轨迹相对后见蒸馏方法",
+      "summary_cn": "现有智能体强化学习的后见奖励信号分配策略存在跨轮次分配不清晰的问题。该研究提出TRIAL框架，通过统一的轮次对齐评分协议，基于普通与后见条件上下文的对数概率差确定token级监督方向与强度，并在整条轨迹上归一化轮级幅度。实验显示在WebShop和ALFWorld的8组骨干模型与环境组合中，TRIAL全面优于GRPO。",
+      "why_it_matters_cn": "为稀疏奖励场景下的智能体训练提供了更高效的监督分配方案，可直接应用于网页操作、具身智能等任务的性能提升。",
+      "tags": [
+        "强化学习",
+        "智能体训练",
+        "后见蒸馏"
+      ],
+      "category": "Agent 进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07371v1",
+      "source_published_at": "2026-08-07T16:12:58+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 76.0,
+      "dedup_key": "7116d4d059bb538d",
+      "title_original": "Trajectory-Relative Hindsight Distillation for Agentic Reinforcement Learning"
+    },
+    {
+      "item_id": "46d5d4e4f655",
+      "title_cn": "Anthropic Python SDK v0.121.0 发布",
+      "summary_cn": "该版本新增`mid-conversation-tool-changes-2026-07-01`测试版API，支持会话预算、advisor工具、固定推理位置及GitHub技能自动加载功能。同时移除了已停用的Claude Opus 4.1模型，并对文档描述做了小幅更新。",
+      "why_it_matters_cn": "使用Anthropic服务的开发者需关注模型移除带来的兼容性问题，可评估会话中工具变更、技能自动加载等新特性的业务价值。",
+      "tags": [
+        "SDK更新",
+        "Anthropic",
+        "工具链"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.121.0",
+      "source_published_at": "2026-08-07T17:10:51+00:00",
+      "collected_at": "2026-08-10T18:38:42+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "0aaef2320512f9c7",
+      "title_original": "anthropic-sdk-python 发布 v0.121.0"
+    },
+    {
+      "item_id": "ed667eed10fd",
+      "title_cn": "视觉语言模型可降低AI推理能耗同时提升时序任务精度",
+      "summary_cn": "LLM推理能耗占AI运营能耗90%以上，且与输入token数正相关，在电信网络分析等数值时序场景下token开销极高。研究发现将时序数据编码为2D图像输入VLM，可在Llama-3.2-90B、Qwen2.5-VL-72B、Pixtral-12B上实现3.6-10.4倍的输入token减少，对应1.8-2.5倍的推理能耗降低。同时精度不降反升，微调后的Llama-3.2-90B-Vision在电信异常检测任务上精度比纯文本版本高220.7%。",
+      "why_it_matters_cn": "为高吞吐数值时序场景的推理降本提供了新范式，尤其适合边缘部署、算力受限的工业场景。",
+      "tags": [
+        "多模态模型",
+        "能耗优化",
+        "时序分析"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07427v1",
+      "source_published_at": "2026-08-07T17:14:45+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 81.0,
+      "dedup_key": "a4d30225a4f33799",
+      "title_original": "A Picture is Worth a Thousand Tokens: How Vision Language Models Cut AI Energy Costs While Improving Accuracy"
+    },
+    {
+      "item_id": "4b806517aefb",
+      "title_cn": "基准污染缓解评估新指标SA-PPG与RailCap方法提出",
+      "summary_cn": "公共基准测试数据泄露到预训练语料会导致评估分数虚高，现有污染缓解评估指标G-AP存在无法表征单题性能、过抑制与欠抑制相互抵消等缺陷。该研究提出分层聚合单题概率差指标SA-PPG，以及在生成过程中判断污染的RailCap方法：当采样落入贪婪轨迹时，将下一个token限制为次优选项，逐步累积抑制直到响应分布足够分散。",
+      "why_it_matters_cn": "为大模型评估的污染校正提供了更严谨的度量标准与解码端干预方案，可提升基准评测结果的可信度。",
+      "tags": [
+        "模型评估",
+        "数据污染",
+        "基准测试"
+      ],
+      "category": "基础理论",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07341v1",
+      "source_published_at": "2026-08-07T15:37:03+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 81.0,
+      "dedup_key": "7c284083dd2bcf82",
+      "title_original": "Zero Gap Is Not Restoration: Stratified Per-Question Probability Evaluation and Step-wise Mitigation of Benchmark Contamination"
+    },
+    {
+      "item_id": "c3f9639e0da9",
+      "title_cn": "研究表明SwiGLU的开放正尾对语言模型FFN并非必需",
+      "summary_cn": "该研究提出基于忆阻分支结构的闭尾门控机制MemGLU，作为SwiGLU的对照方案。在9M和30M参数规模的配对预训练实验中，MemGLU的验证集NLL与SwiGLU差距约0.1%，且两者门控机制使用方式不同但损失相近。研究结论为在测试规模下，解码器-only语言模型的FFN不需要SwiGLU的开放正尾。",
+      "why_it_matters_cn": "为硬件友好的门控激活函数设计提供了实验依据，有望推动低功耗、存算一体架构的大模型适配。",
+      "tags": [
+        "激活函数",
+        "模型架构",
+        "预训练"
+      ],
+      "category": "基础理论",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07323v1",
+      "source_published_at": "2026-08-07T15:20:24+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 81.0,
+      "dedup_key": "efc72bbbcd040133",
+      "title_original": "Is SwiGLU's Open Positive Tail Necessary? Evidence from Closed-Tail Gating with MemGLU"
+    },
+    {
+      "item_id": "7a9bf93b9565",
+      "title_cn": "LangChain OpenAI 集成包 v1.4.2 发布",
+      "summary_cn": "该版本修复了上下文窗口超限错误处理、LangChain生成的内容块ID过滤、Responses API的text选项保留、MCP授权信息脱敏等问题。同时更新了模型配置数据，并批量升级了3个目录下的7项依赖。",
+      "why_it_matters_cn": "使用LangChain对接OpenAI服务的开发者可升级版本修复上下文超限、数据脱敏等生产环境常见问题。",
+      "tags": [
+        "LangChain",
+        "SDK更新",
+        "工具链"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.4.2",
+      "source_published_at": "2026-08-07T13:58:15+00:00",
+      "collected_at": "2026-08-10T18:38:47+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "bf8d0a9140d4375d",
+      "title_original": "langchain 发布 langchain-openai==1.4.2"
+    },
+    {
+      "item_id": "3e8ac52be616",
+      "title_cn": "基于双层优化的LLM校准方法优于事后温度缩放",
+      "summary_cn": "偏好对齐常导致LLM过度自信、校准性差，传统事后温度缩放存在领域泛化性差的问题。该研究提出通过最大化预测分布熵作为校准目标，采用双层优化框架：下层用参数化损失训练模型，上层选择损失超参数以最大化熵，并采用高效一阶近似避免二阶计算。实验显示该方法在多选和开放式生成问答任务中均能实现良好校准，且跨域泛化优势明显。",
+      "why_it_matters_cn": "为需要高可靠性输出的医疗、金融等场景提供了提升模型校准性的训练方案，降低过度自信带来的决策风险。",
+      "tags": [
+        "模型校准",
+        "偏好对齐",
+        "训练方法"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07419v1",
+      "source_published_at": "2026-08-07T17:05:10+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 77.0,
+      "dedup_key": "fb4223b597a3c9c9",
+      "title_original": "Beyond Post-Hoc Temperature Scaling: Bilevel Optimization for LLM Calibration"
+    },
+    {
+      "item_id": "9d90d0361630",
+      "title_cn": "QFCQT：面向高波动时序预测的混沌门控量化Transformer框架",
+      "summary_cn": "非平稳时序预测存在长程依赖、局部波动突变、结构偏移等挑战，现有Transformer预测器的前馈块通常采用平滑静态激活，对突变机制不敏感。该研究提出量子分形启发的混沌门控量化Transformer QFCQT，由数值编码器、可学习Lee振荡器激活模块、平滑-混沌门控融合机制三部分组成，通过8组参数化Lee振荡器的软叠加自适应捕捉不同非线性响应模式。",
+      "why_it_matters_cn": "为金融、工业监控等高波动时序场景的预测任务提供了新的架构思路，可提升突变场景下的预测鲁棒性。",
+      "tags": [
+        "时序预测",
+        "Transformer架构",
+        "非线性激活"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07363v1",
+      "source_published_at": "2026-08-07T16:05:21+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 77.0,
+      "dedup_key": "2445e0e00cbdc216",
+      "title_original": "QFCQT: A Chaotically Gated Quantformer Framework for Volatile Time-Series Forecasting"
+    },
+    {
+      "item_id": "df5a0cdd6cf9",
+      "title_cn": "扩散大语言模型存在机制性安全漏洞，可被高效越狱",
+      "summary_cn": "扩散大语言模型（DLLM）采用迭代并行去噪替代自回归预测，但其内部安全机制尚不清晰。研究发现DLLM的安全对齐具有稀疏性且跨架构可迁移：从自回归模型初始化的DLLM继承了相同的机制性安全足迹，可通过安全神经元映射与剪枝实现迁移攻击，自剪枝可将LLaDA和Dream的攻击成功率分别从2.6%提升至73.8%、从1.9%提升至86.6%。基于此提出的SN-Guided Diffusion黑盒越狱框架，在多个开源和闭源模型上实现了最高86.9%的迁移攻击成功率。",
+      "why_it_matters_cn": "暴露了扩散LLM的安全脆弱性，为扩散架构的对齐研究敲响警钟，企业部署扩散LLM需额外评估安全风险。",
+      "tags": [
+        "AI安全",
+        "扩散模型",
+        "越狱攻击"
+      ],
+      "category": "可选观察",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07430v1",
+      "source_published_at": "2026-08-07T17:17:18+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 73.0,
+      "dedup_key": "560899572c35b7ab",
+      "title_original": "Diffusion LLMs as Targets and Adversaries: Mechanistic Safety Exploits"
+    },
+    {
+      "item_id": "f29e002f2d9c",
+      "title_cn": "Fisher-R1：面向可靠假设检验的LLM智能体",
+      "summary_cn": "现有LLM智能体在自动化假设检验任务中常出现细微推断错误，导致分析执行正确但结论错误，且现有基准无法捕捉这类失效模式。该研究构建了包含425个开放现实假设检验任务的P-Bench基准，覆盖经济、生物、医学领域，并提出用合成任务和强化学习训练的开源智能体Fisher-R1。在P-Bench上，Fisher-R1-14B相比骨干模型大幅提升，超过GPT-5.4和DeepSeek-V4-Pro等基线，单次试验成功率比DeepSeek-V4-Pro平均相对提升21%。",
+      "why_it_matters_cn": "为科研、金融等需要严谨统计推断的场景提供了专用智能体方案，也为科学智能的统计推理能力评估提供了基准。",
+      "tags": [
+        "科学智能",
+        "智能体",
+        "基准测试"
+      ],
+      "category": "Agent 进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07437v1",
+      "source_published_at": "2026-08-07T17:22:00+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 72.0,
+      "dedup_key": "37299345ad7609cf",
+      "title_original": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing"
+    },
+    {
+      "item_id": "7239336f51c4",
+      "title_cn": "CoBa：通过计算均衡路由实现低成本测试时扩展",
+      "summary_cn": "现有测试时扩展通常沿单一维度增加算力，在固定推理预算下存在生成、验证、停止的资源分配矛盾。该研究提出计算均衡路由策略CoBa：先生成少量候选答案，再用低成本验证广泛筛选，将不确定或高价值的候选路由到更强的验证器。在MATH-500、AIME 2024/2025等3129个样本上，CoBa-Routed-Strong达到85.13%的宏观准确率，与自评估加权投票的85.20%相当，但参数加权token消耗减少49.1%。",
+      "why_it_matters_cn": "为推理预算有限的数学推理、代码生成等场景提供了更高效的测试时算力分配方案，可在不降低精度的前提下显著降本。",
+      "tags": [
+        "推理优化",
+        "测试时扩展",
+        "资源调度"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07424v1",
+      "source_published_at": "2026-08-07T17:12:13+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "155a49586fc739e6",
+      "title_original": "CoBa: Cost-Effective Test-Time Scaling via Compute-Balanced Routing"
+    },
+    {
+      "item_id": "45a47a0446f1",
+      "title_cn": "DynaCrys：基于动态空间群扩散的晶体生成模型",
+      "summary_cn": "新型晶体材料搜索需要同时建模离散晶体对称性、元素组成和连续几何结构，现有生成方法存在局限。该研究提出DynaCrys生成模型，通过耦合符号扩散过程让空间群与Wyckoff占位、元素共同演化，空间群跃迁遵循晶体学群-子群关系，预训练对称码本为合法约束解码器和对称约束几何模型提供统一表示。大规模评估显示DynaCrys在稳定、独特、新型晶体的对称感知发现任务上达到最优性能。",
+      "why_it_matters_cn": "为材料科学的AI辅助发现提供了更精准的生成工具，可加速新能源、半导体等领域的新材料研发。",
+      "tags": [
+        "AI for Science",
+        "生成模型",
+        "材料科学"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07401v1",
+      "source_published_at": "2026-08-07T16:45:51+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "30b0f67caa1cd575",
+      "title_original": "DynaCrys: Crystal Generation with Dynamic Space-Group Diffusion"
+    },
+    {
+      "item_id": "9d5c753ab2bc",
+      "title_cn": "FinRank：面向SEC文件的证据导向金融问答与检索基准",
+      "summary_cn": "现有金融问答评估仅关注答案正确性，但SEC文件中相似披露信息跨章节、跨报告期、跨公司重复出现，易导致答案正确但证据来源错误的问题。FinRank基准聚焦来源敏感的检索问题，包含22家公司10-K和10-Q文件上的1185条人工标注问答记录，每条含参考答案、黄金支撑段落和人工 curated 的难负例。基线测试显示即使7B指令调优嵌入模型在 pooled 证据语料上Recall@10仅44.8%，难负例下成对准确率下降13.0-20.5个百分点。",
+      "why_it_matters_cn": "为金融合规、投研等场景的问答系统提供了更贴近真实需求的评估标准，推动证据可追溯的金融AI发展。",
+      "tags": [
+        "金融AI",
+        "基准测试",
+        "检索增强"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07400v1",
+      "source_published_at": "2026-08-07T16:45:39+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "4729076d3436444a",
+      "title_original": "FinRank: An Evidence-Grounded Benchmark for Financial Question Answering and Retrieval over SEC Filings"
+    },
+    {
+      "item_id": "41f78cb2f86b",
+      "title_cn": "FedDOSE：分解站点效应的脑动态功能连接联邦学习框架",
+      "summary_cn": "多站点fMRI数据联邦学习面临站点差异带来的统计异质性挑战，且现有方法多基于静态功能连接，忽略脑网络动态信息。该研究提出FedDOSE框架，通过模块化引导的Tucker分解块编码高维动态功能连接张量，高效捕捉模块级时空模式，并结合最优传输重心和Procrustes分析在全局层面对齐类别原型。在ABIDE-I、ABIDE-II、ADHD-200三个数据集上的自闭症和多动症诊断任务中，FedDOSE优于现有最优方法。",
+      "why_it_matters_cn": "为医疗影像多中心协作建模提供了更鲁棒的联邦学习方案，可提升跨站点脑疾病诊断模型的泛化能力。",
+      "tags": [
+        "联邦学习",
+        "医疗AI",
+        "脑科学"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.07393v1",
+      "source_published_at": "2026-08-07T16:37:30+00:00",
+      "collected_at": "2026-08-10T18:37:48+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "1a9507803d5a7a2a",
+      "title_original": "FedDOSE: Federated Learning Framework Decomposing Site Effects for Modeling Brain Dynamic Functional Connectivity"
+    }
+  ],
+  "empty_categories": [],
+  "insufficient_note": null,
+  "grace_note": "本日标准内容窗口（2026-08-09T06:30:00+08:00 → 2026-08-10T06:30:00+08:00）内达标内容不足，已向前回看至 2026-08-06T06:30:00+08:00 补充近期动态。",
+  "generation": {
+    "llm_usage": {
+      "calls": 1,
+      "tokens": 8972
+    },
+    "collection_stats": {
+      "arxiv": {
+        "ok": true,
+        "count": 60
+      },
+      "hf_papers": {
+        "ok": true,
+        "count": 40
+      },
+      "hf_blog": {
+        "ok": true,
+        "count": 40
+      },
+      "openai": {
+        "ok": true,
+        "count": 40
+      },
+      "deepmind": {
+        "ok": true,
+        "count": 40
+      },
+      "google_ai": {
+        "ok": true,
+        "count": 20
+      },
+      "anthropic": {
+        "ok": true,
+        "count": 14
+      },
+      "mistral": {
+        "ok": true,
+        "count": 15
+      },
+      "github_releases": {
+        "ok": true,
+        "count": 3
+      }
+    }
+  }
+}

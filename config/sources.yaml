@@ -1,0 +1,90 @@
+# 来源白名单配置（PRD §3.2 / D7）
+# 级别: A=一手事实主链路 / B=权威二手交叉验证 / C=社区信号（仅发现线索）
+# 规则: 重大参数/价格/许可必须回 A 级源；单源失败降级不阻塞整体。
+
+collection:
+  window_hours: 24          # 内容窗口长度（前一日 06:30 -> 当日 06:30）
+  grace_days: 3             # 窗口内达标条目不足时，向前回看的最大天数（透明披露）
+  http_timeout: 15          # 采集 HTTP 超时（秒）
+  max_candidates_per_source: 40
+  retry_once_after_seconds: 300   # 失败自动重试间隔（PRD §5.3）
+
+sources:
+  arxiv:
+    grade: A
+    type: arxiv
+    enabled: true
+    params:
+      max_results: 60
+      search_query: 'cat:cs.AI OR cat:cs.CL OR cat:cs.LG'
+  hf_papers:
+    grade: A
+    type: hf_papers
+    enabled: true
+    params:
+      max_results: 40
+      days: 3
+  hf_blog:
+    grade: A
+    type: rss
+    enabled: true
+    params:
+      feed_url: https://huggingface.co/blog/feed.xml
+  openai:
+    grade: A
+    type: rss
+    enabled: true
+    params:
+      feed_url: https://openai.com/news/rss.xml
+  deepmind:
+    grade: A
+    type: rss
+    enabled: true
+    params:
+      feed_url: https://deepmind.google/blog/rss.xml
+  google_ai:
+    grade: A
+    type: rss
+    enabled: true
+    params:
+      feed_url: https://blog.google/technology/ai/rss/
+  anthropic:
+    grade: A
+    type: html_news
+    enabled: true
+    params:
+      list_url: https://www.anthropic.com/news
+      article_url_prefix: https://www.anthropic.com
+      max_articles: 15
+  mistral:
+    grade: A
+    type: html_news
+    enabled: true
+    params:
+      list_url: https://mistral.ai/news/
+      article_url_prefix: https://mistral.ai
+      max_articles: 15
+  github_releases:
+    grade: A
+    type: github_releases
+    enabled: true
+    params:
+      repos:
+        - openai/openai-python
+        - anthropics/anthropic-sdk-python
+        - huggingface/transformers
+        - pytorch/pytorch
+        - microsoft/autogen
+        - langchain-ai/langchain
+        - deepseek-ai/DeepSeek-V3
+        - QwenLM/Qwen3
+      per_repo: 3
+      days: 3
+
+# B 级 / C 级源（MVP 采集以 A 级为主；以下为交叉验证与线索预留配置）
+  hf_news:
+    grade: B
+    type: rss
+    enabled: false
+    params:
+      feed_url: https://huggingface.co/blog/feed.xml

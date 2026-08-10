@@ -1,0 +1,50 @@
+{% extends "base.html.j2" %}
+{% block title %}AI 日报 · {{ report_date }}{% endblock %}
+{% block content %}
+<article class="daily">
+  <header class="daily-head">
+    <h1>AI 日报 · {{ report_date }}</h1>
+    <p class="meta">信息截止：{{ data_cutoff }}（Asia/Shanghai）｜生成时间：{{ generated_at }}</p>
+    <p class="meta">内容窗口：{{ content_window_start }} → {{ content_window_end }}</p>
+  </header>
+
+  {% if insufficient_note %}
+  <div class="notice">{{ insufficient_note }}</div>
+  {% endif %}
+  {% if grace_note %}
+  <div class="notice">{{ grace_note }}</div>
+  {% endif %}
+
+  {% for category in category_order %}
+  <section class="category-block">
+    <h2>{{ category }}</h2>
+    {% set cat_items = items_by_category.get(category, []) %}
+    {% if cat_items %}
+      {% for item in cat_items %}
+      <article class="item-card">
+        <h3><a href="{{ item.source_url }}" target="_blank" rel="noopener nofollow">{{ item.title_cn }}</a></h3>
+        <p class="summary">{{ item.summary_cn }}</p>
+        <p class="why"><strong>为什么重要：</strong>{{ item.why_it_matters_cn }}</p>
+        <div class="tags">
+          {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+        <p class="src">
+          来源：<a href="{{ item.source_url }}" target="_blank" rel="noopener nofollow">{{ item.source_name }}</a>
+          ｜原始发布时间：{{ item.source_published_at or "未知" }}
+          ｜抓取时间：{{ item.collected_at }}
+          ｜事实类型：{{ item.fact_type }}（{{ item.source_grade }} 级来源）
+        </p>
+      </article>
+      {% endfor %}
+    {% else %}
+      <p class="empty">今日无重大更新。</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+
+  <nav class="daily-nav">
+    {% if prev_date %}<a href="{{ base_url }}/daily/{{ prev_date }}.html">‹ 上一期（{{ prev_date }}）</a>{% endif %}
+    {% if next_date %}<a href="{{ base_url }}/daily/{{ next_date }}.html">下一期（{{ next_date }}）›</a>{% endif %}
+  </nav>
+</article>
+{% endblock %}

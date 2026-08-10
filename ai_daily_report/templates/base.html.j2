@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>{% block title %}AI 日报{% endblock %}</title>
+<link rel="stylesheet" href="{{ base_url }}/assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ base_url }}/">AI 日报</a>
+    <nav class="site-nav">
+      <a href="{{ base_url }}/">首页</a>
+      <a href="{{ base_url }}/archive.html">归档</a>
+      <a href="{{ base_url }}/corrections.html">更正记录</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>{{ ai_disclosure }}</p>
+    <p>本页内容由 AI 辅助整理生成，信息以原始来源为准。发现错误请通过 <a href="{{ base_url }}/corrections.html">更正入口</a> 反馈。统计分析仅使用匿名聚合数据，不采集个人身份信息。</p>
+  </div>
+</footer>
+</body>
+</html>

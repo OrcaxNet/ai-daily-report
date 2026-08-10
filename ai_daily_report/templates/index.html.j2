@@ -1,0 +1,9 @@
+{% extends "base.html.j2" %}
+{% block title %}AI 日报 · 首页{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>AI 日报</h1>
+  <p>每天 08:00（Asia/Shanghai）更新：精选基础理论、模型进展、Agent 进展与 AI 应用的最新动态，中文可读、来源可核验。</p>
+  {% if latest_date %}<p class="meta">最新一期：<a href="{{ base_url }}/daily/{{ latest_date }}.html">{{ latest_date }}</a></p>{% endif %}
+</section>
+{% endblock %}

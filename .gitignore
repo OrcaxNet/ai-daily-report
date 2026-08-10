@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+site/
+build/
+data/runs/
+data/.llm_meta.json
+.DS_Store
