@@ -84,7 +84,8 @@ finally:
 
 # 2) 提交数据状态到 main
 run(["git", "add", "data/state.json", "data/reports/"])
-if run(["git", "diff", "--cached", "--quiet"]).returncode != 0:
+has_changes = run(["git", "diff", "--cached", "--quiet"], check=False).returncode != 0
+if has_changes:
     run(["git", "commit", "-m", f"chore(data): update report state for {date}"])
     run(["git", "push", "origin", "main"])
     print("[run_daily] main data pushed")
