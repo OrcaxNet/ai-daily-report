@@ -68,9 +68,13 @@ try:
             shutil.rmtree(item)
         else:
             item.unlink()
-    # 拷贝 site 内容
+    # 复制 site 内容（保留本地 site/ 副本）
     for item in site.iterdir():
-        shutil.move(str(item), str(wt / item.name))
+        dst = wt / item.name
+        if item.is_dir():
+            shutil.copytree(item, dst)
+        else:
+            shutil.copy2(item, dst)
     run(["git", "-C", str(wt), "add", "-A"])
     changed = run(["git", "-C", str(wt), "status", "--porcelain"]).stdout.strip()
     if changed:
