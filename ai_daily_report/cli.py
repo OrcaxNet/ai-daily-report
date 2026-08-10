@@ -181,9 +181,8 @@ def cmd_run(date: str, opts):
         log.info("=== 步骤 %d/%d: %s ===", len(steps), 7, name)
 
     try:
-        step("1 采集")
+        step("1 采集 / 2 评分 / 3 生成")
         report = _build_report(date, opts)
-        step("2 筛选评分 + 3 生成")
         step("4 组装")
         staging = REPO_ROOT / "build" / "staging"
         render_site(report, state_store, staging)

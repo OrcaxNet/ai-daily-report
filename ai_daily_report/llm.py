@@ -31,6 +31,8 @@ class LLMClient:
         creds = resolve_coding_plan_credentials() if not (api_key and base_url) else {"api_key": api_key, "base_url": base_url}
         self.api_key = api_key or creds["api_key"]
         self.base_url = base_url or creds["base_url"]
+        if self.base_url.endswith("/v1"):
+            self.base_url = self.base_url[:-3]
         self.model = model or llm_cfg.get("model", "claude-sonnet-4-20250514")
         self.max_tokens = int(llm_cfg.get("max_tokens", 6000))
         self.temperature = float(llm_cfg.get("temperature", 0.3))
