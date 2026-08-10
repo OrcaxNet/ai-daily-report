@@ -19,6 +19,8 @@ if [[ -z "$DATE" ]]; then
   DATE="$(TZ=Asia/Shanghai date +%F)"
 fi
 
+echo "[run_daily] date=$DATE push=$PUSH"
+
 # 环境准备
 if [[ ! -d .venv ]]; then
   python3 -m venv .venv
@@ -32,52 +34,63 @@ if ! .venv/bin/python -m ai_daily_report run --date "$DATE"; then
   .venv/bin/python -m ai_daily_report run --date "$DATE"
 fi
 
-# 发布到 gh-pages（由调用方决定是否 --push；autopilot 场景恒推送）
+# 发布到 gh-pages + 提交数据（autopilot 场景恒推送；--push 手动推送）
 if [[ "$PUSH" == "yes" || "${AI_DAILY_AUTOPILOT:-}" == "1" ]]; then
-  echo "[run_daily] push site/ -> gh-pages"
-  python3 - <<'PY'
-import os, subprocess, sys
+  echo "[run_daily] deploy site/ -> gh-pages"
+  python3 - "$DATE" <<'PY'
+import os, subprocess, sys, shutil
 from pathlib import Path
+
+date = sys.argv[1]
 root = Path.cwd()
 site = root / "site"
 if not site.exists():
-    sys.exit(0)
-# 轻量发布：把 site 内容同步到 gh-pages 分支工作树
-subprocess.run(["git", "fetch", "origin", "gh-pages", "--depth=1"], check=False)
-branches = subprocess.run(["git", "branch", "--list", "gh-pages"], capture_output=True, text=True).stdout.strip()
-if branches:
-    subprocess.run(["git", "checkout", "gh-pages"], check=True)
-else:
-    subprocess.run(["git", "checkout", "--orphan", "gh-pages"], check=True)
-    subprocess.run(["git", "rm", "-rf", "--ignore-unmatch", "."], check=False)
-# 拷贝 site 内容到工作树
-import shutil
-for item in site.iterdir():
-    dst = root / item.name
-    if dst.exists():
-        if dst.is_dir() and not dst.is_symlink():
-            shutil.rmtree(dst)
+    sys.exit("site/ missing, nothing to deploy")
+
+def run(args, check=True):
+    r = subprocess.run(args, capture_output=True, text=True)
+    if check and r.returncode != 0:
+        raise RuntimeError(f"cmd failed ({' '.join(args)}): {r.stderr[:500]}")
+    return r
+
+# 1) 用独立 worktree 更新 gh-pages，避免与 main 工作树冲突
+wt = root.parent / "ai-daily-report-ghpages"
+run(["git", "fetch", "origin", "gh-pages", "--depth=1"], check=False)
+if wt.exists():
+    run(["git", "worktree", "remove", str(wt), "--force"], check=False)
+run(["git", "worktree", "add", str(wt), "gh-pages"])
+try:
+    # 清空 worktree（保留 .git）
+    for item in wt.iterdir():
+        if item.name == ".git":
+            continue
+        if item.is_dir() and not item.is_symlink():
+            shutil.rmtree(item)
         else:
-            dst.unlink()
-    shutil.move(str(item), str(dst))
-subprocess.run(["git", "add", "-A"], check=True)
-changed = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout.strip()
-if changed:
-    subprocess.run(["git", "commit", "-m", f"chore(site): publish AI daily report {DATE}"], check=True)
-    subprocess.run(["git", "push", "origin", "gh-pages"], check=True)
-    print("[run_daily] gh-pages pushed")
+            item.unlink()
+    # 拷贝 site 内容
+    for item in site.iterdir():
+        shutil.move(str(item), str(wt / item.name))
+    run(["git", "-C", str(wt), "add", "-A"])
+    changed = run(["git", "-C", str(wt), "status", "--porcelain"]).stdout.strip()
+    if changed:
+        run(["git", "-C", str(wt), "commit", "-m", f"site: publish AI daily report {date}"])
+        run(["git", "-C", str(wt), "push", "origin", "gh-pages"])
+        print("[run_daily] gh-pages pushed")
+    else:
+        print("[run_daily] gh-pages no changes")
+finally:
+    run(["git", "worktree", "remove", str(wt), "--force"], check=False)
+
+# 2) 提交数据状态到 main
+run(["git", "add", "data/state.json", "data/reports/"])
+if run(["git", "diff", "--cached", "--quiet"]).returncode != 0:
+    run(["git", "commit", "-m", f"chore(data): update report state for {date}"])
+    run(["git", "push", "origin", "main"])
+    print("[run_daily] main data pushed")
 else:
-    print("[run_daily] no site changes")
+    print("[run_daily] main no data changes")
 PY
-  # 回 main 分支，提交 data 状态
-  git checkout main 2>/dev/null || true
-  git add data/state.json data/reports/ 2>/dev/null || true
-  if git diff --cached --quiet; then
-    echo "[run_daily] no data changes"
-  else
-    git commit -m "chore(data): update report state for ${DATE}" || true
-    git push origin main || true
-  fi
 fi
 
 echo "[run_daily] done ${DATE}"
