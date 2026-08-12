@@ -1,0 +1,383 @@
+{
+  "report_date": "2026-08-12",
+  "generated_at": "2026-08-12T08:23:24+08:00",
+  "content_window_start": "2026-08-11T06:30:00+08:00",
+  "content_window_end": "2026-08-12T06:30:00+08:00",
+  "item_count": 15,
+  "category_counts": {
+    "基础理论": 2,
+    "模型进展": 4,
+    "Agent 进展": 3,
+    "AI 应用": 4,
+    "可选观察": 2
+  },
+  "corrections": [],
+  "data_cutoff": "2026-08-12T06:30:00+08:00",
+  "ai_disclosure": "本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。",
+  "items": [
+    {
+      "item_id": "b24bde24268c",
+      "title_cn": "研究提出输入凸神经网络作为数学优化的更优代理模型",
+      "summary_cn": "运筹学中常用训练后的神经网络作为优化问题的代理，主流方法是采用ReLU激活的前馈神经网络，其分段线性结构可转化为精确但计算量随网络规模增长的混合整数规划。该研究主张当底层响应近似凸或凹时，输入凸神经网络在结构上更具优势，其凸架构可带来更紧的线性规划松弛，还支持基于上境图表示的线性规划重构，并可据此构建分支定界算法。",
+      "why_it_matters_cn": "为需要将神经网络嵌入优化流程的工业场景提供了计算效率更高的方案选择，可降低大规模代理优化的求解成本。",
+      "tags": [
+        "神经网络",
+        "数学优化",
+        "运筹学"
+      ],
+      "category": "基础理论",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09707v1",
+      "source_published_at": "2026-08-10T15:11:22+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "9592e68c4670ad78",
+      "title_original": "Input convex neural networks as surrogates in mathematical optimisation"
+    },
+    {
+      "item_id": "67790481a95e",
+      "title_cn": "能量结构化潜世界模型结合神经时间场实现物理一致的开放世界运动规划",
+      "summary_cn": "针对具身AI中运动规划需严格符合真实物理动力学、现有潜世界模型物理知识隐含不可复用的问题，研究提出能量结构化潜世界模型ELWM，其潜状态显式携带能量和动量，通过耗散与控制端口保证因果转移。研究进一步构建物理条件神经时间场PC-NTF，将ELWM通过程函方程融入到达时间场，生成物理 informed 的导航策略。",
+      "why_it_matters_cn": "为开放世界具身导航、机器人运动规划提供了物理一致性更强的方案，可显著降低碰撞率、提升导航成功率。",
+      "tags": [
+        "具身AI",
+        "运动规划",
+        "世界模型"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09876v1",
+      "source_published_at": "2026-08-10T17:31:18+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 73.0,
+      "dedup_key": "d82d2aedad9db722",
+      "title_original": "Energy-Structured Latent World Models with Neural Time Fields for Physically Constistent Open-World Motion Planning"
+    },
+    {
+      "item_id": "5826347e283f",
+      "title_cn": "Macaron-V1 开源智能体模型系列发布，支持持续学习与自改进",
+      "summary_cn": "Macaron-V1是面向体验智能的开源智能体模型系列，围绕自适应与协作两大目标设计：自适应通过版本化模型-线束对的递归改进实现，协作采用Mixture-of-LoRA架构，冻结基础模型并组合专用LoRA适配器，每轮用户请求选择一个LoRA。旗舰版Macaron-V1-Venti基于744B GLM-5.2底座，搭配聊天、智能体、编码、GenUI四个LoRA；另有基于Qwen3.6的50B版本面向本地部署。",
+      "why_it_matters_cn": "为部署后持续学习的智能体系统提供了架构、算法与基础设施协同设计的参考方案，MoL架构可降低持续学习的成本与风险。",
+      "tags": [
+        "大模型",
+        "智能体",
+        "持续学习",
+        "LoRA"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09819v1",
+      "source_published_at": "2026-08-10T16:39:55+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 81.0,
+      "dedup_key": "33d00c23c57a011d",
+      "title_original": "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA"
+    },
+    {
+      "item_id": "25f36061b190",
+      "title_cn": "OpenAI Python SDK 发布 v2.54.0 版本",
+      "summary_cn": "该版本新增功能为API添加了新的Responses模型标识符；修复方面明确了音频上传的元数据要求；日常维护将生成文件的头部归属更新为Castiron。",
+      "why_it_matters_cn": "使用OpenAI Python SDK的开发者需注意更新适配新的Responses模型标识，以及音频上传的元数据规范变化。",
+      "tags": [
+        "OpenAI",
+        "SDK",
+        "开发工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/openai/openai-python/releases/tag/v2.54.0",
+      "source_published_at": "2026-08-11T18:45:59+00:00",
+      "collected_at": "2026-08-12T08:21:58+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "cc7d4d7527b6416d",
+      "title_original": "openai-python 发布 v2.54.0"
+    },
+    {
+      "item_id": "54e7d2cee22c",
+      "title_cn": "Transformers v5.15.0 发布，新增Meta Muse Glimmer多模态模型",
+      "summary_cn": "Hugging Face Transformers库发布v5.15.0版本，新增Meta推出的Muse Glimmer多模态模型。该模型专为智能体场景设计，由Muse蒸馏得到30B参数，采用Apache 2.0许可，包含2B参数的ViT风格视觉感知编码器与28B参数的文本解码器，支持本地部署。",
+      "why_it_matters_cn": "开源30B参数级别的智能体向多模态模型，为隐私敏感的本地智能体应用提供了新的可选底座。",
+      "tags": [
+        "多模态模型",
+        "开源模型",
+        "Transformers"
+      ],
+      "category": "模型进展",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/huggingface/transformers/releases/tag/v5.15.0",
+      "source_published_at": "2026-08-10T10:28:13+00:00",
+      "collected_at": "2026-08-12T08:22:01+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "8c05d8240be122a9",
+      "title_original": "transformers 发布 v5.15.0"
+    },
+    {
+      "item_id": "da766f1fb2ad",
+      "title_cn": "LangChain 发布 langchain==1.3.15 版本",
+      "summary_cn": "该版本新增功能包括在AgentMiddleware上暴露trace_policy、为wrap_tool_call添加state_schema参数、从messages投影中过滤内部中间件模型调用；修复了SummarizationMiddleware摘要失败时的历史保留、LLMToolEmulator导入错误、PIIMatch重导出等问题；同时更新了依赖与文档。",
+      "why_it_matters_cn": "LangChain用户可关注新增的追踪策略、工具调用状态 schema 等能力，评估是否升级以优化智能体开发体验。",
+      "tags": [
+        "LangChain",
+        "智能体框架",
+        "开发工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.15",
+      "source_published_at": "2026-08-11T19:11:09+00:00",
+      "collected_at": "2026-08-12T08:22:05+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "fc500774a2d714d3",
+      "title_original": "langchain 发布 langchain==1.3.15"
+    },
+    {
+      "item_id": "24e5c431f447",
+      "title_cn": "LangChain 发布 langchain-core==1.5.4 版本",
+      "summary_cn": "该版本核心修复包括兼容pydantic 2.14、阻止StructuredPrompt修改调用方kwargs、保留RootModel可运行对象的扁平工具参数schema、关闭流式追踪器内部创建的事件循环、保留OpenAI文件块等；同时更新了多项依赖与文档。",
+      "why_it_matters_cn": "使用LangChain核心模块的开发者需注意pydantic兼容性、流式追踪等修复，可根据自身场景评估升级。",
+      "tags": [
+        "LangChain",
+        "核心库",
+        "开发工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.5.4",
+      "source_published_at": "2026-08-11T18:03:10+00:00",
+      "collected_at": "2026-08-12T08:22:05+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "bf2a39ead51efd76",
+      "title_original": "langchain 发布 langchain-core==1.5.4"
+    },
+    {
+      "item_id": "93b06ba1d3d0",
+      "title_cn": "LangChain 发布 langchain-anthropic==1.5.5 版本",
+      "summary_cn": "该版本修复了使用量元数据中的推理token上报问题、Claude文件工具中间件重命名时的KeyError问题、无凭证配置时的错误提示不清晰问题，同时刷新了模型配置数据。",
+      "why_it_matters_cn": "使用LangChain对接Anthropic Claude模型的开发者可关注推理token统计、文件工具等修复，按需升级。",
+      "tags": [
+        "LangChain",
+        "Anthropic",
+        "开发工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.5.5",
+      "source_published_at": "2026-08-11T19:16:55+00:00",
+      "collected_at": "2026-08-12T08:22:05+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "71060899b8481c7b",
+      "title_original": "langchain 发布 langchain-anthropic==1.5.5"
+    },
+    {
+      "item_id": "580d5bb894c0",
+      "title_cn": "NVIDIA推出Magpie TTS开源方案，支持低延迟多语言语音智能体部署",
+      "summary_cn": "NVIDIA在Hugging Face博客介绍Magpie TTS技术方案，主打低延迟、多语言的语音智能体构建，提供开源权重与完整部署控制权。",
+      "why_it_matters_cn": "为需要构建多语言语音交互智能体的团队提供了低延迟的开源TTS选项，可用于客服、虚拟助手等场景。",
+      "tags": [
+        "语音合成",
+        "NVIDIA",
+        "开源",
+        "智能体"
+      ],
+      "category": "Agent 进展",
+      "source_name": "hf_blog",
+      "source_url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "source_published_at": "2026-08-10T16:25:36+00:00",
+      "collected_at": "2026-08-12T08:21:11+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 74.0,
+      "dedup_key": "24c196d3a20da600",
+      "title_original": "Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS"
+    },
+    {
+      "item_id": "97bd352e2d31",
+      "title_cn": "研究发现可从专有大模型API中窃取加密推理轨迹的漏洞",
+      "summary_cn": "主流大模型厂商将推理过程以加密文本块形式返回客户端，随后续请求回传以保护知识产权。研究发现同一厂商生态内的加密推理块可跨会话、跨用户、跨模型互换，攻击者可将强模型的加密推理块注入同厂商防护较弱的模型，迫使后者解密输出明文推理内容，无需直接破解强模型。该漏洞可被用于绕过反蒸馏机制、大规模提取公开日志中的隐私数据等。",
+      "why_it_matters_cn": "提示大模型服务商需修复加密推理块的跨模型兼容性漏洞，也提醒开发者不要公开包含加密推理块的会话日志，避免隐私泄露。",
+      "tags": [
+        "大模型安全",
+        "推理安全",
+        "漏洞"
+      ],
+      "category": "可选观察",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09867v1",
+      "source_published_at": "2026-08-10T17:24:50+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 72.0,
+      "dedup_key": "f3f6f342a50cfa87",
+      "title_original": "Stealing Reasoning Traces from Proprietary LLM APIs"
+    },
+    {
+      "item_id": "489a4b6c4f35",
+      "title_cn": "研究提出自主科研智能体应借鉴模糊测试的反馈导向范式",
+      "summary_cn": "当前自主科研智能体多采用“生成-排序”范式，难以应对稀疏反馈问题。研究认为科研智能体的控制循环更接近灰盒模糊测试：每次执行都应通过覆盖率类信号获得认知进展的密集反馈，再基于该信号调整下一步实验方向，而非仅对完成的实验排序。研究提出应通过受控测试验证进展信号的有效性、反馈导向搜索的效率，以及受保护验证对减少错误发现的作用。",
+      "why_it_matters_cn": "为自主科研智能体的架构设计提供了新的思路，反馈机制而非生成能力可能是提升科研效率的核心瓶颈。",
+      "tags": [
+        "科研智能体",
+        "模糊测试",
+        "自主研究"
+      ],
+      "category": "Agent 进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09855v1",
+      "source_published_at": "2026-08-10T17:13:02+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "编辑判断",
+      "score": 72.0,
+      "dedup_key": "d7463abbbd444e28",
+      "title_original": "Agentic Auto-Research is Fuzz Testing"
+    },
+    {
+      "item_id": "625100b1805f",
+      "title_cn": "多智能体AI安全可作为制度设计问题研究",
+      "summary_cn": "POLIS研究项目的首篇论文提出，多智能体系统的安全取决于算法制度的设计，包括任务委派、信息流动、动作执行、资源共享等规则。研究通过5280个episode的测试套件验证：详细的宪法式提示可实现0/384的违规率；感知来源的可执行守卫也实现0/384违规率，且拦截的51次违规尝试中有44次后续可安全完成；而本地状态守卫在来源不变但可见策略变化的场景中违规率达22/96。",
+      "why_it_matters_cn": "为多智能体系统的安全治理提供了制度设计的实证参考，来源追踪类守卫比本地状态守卫更能防范规则规避。",
+      "tags": [
+        "多智能体",
+        "AI安全",
+        "制度设计"
+      ],
+      "category": "可选观察",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09828v1",
+      "source_published_at": "2026-08-10T16:47:01+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 72.0,
+      "dedup_key": "35a4bba0a5025b9b",
+      "title_original": "Multi-Agent AI Safety as an Institutional Design Problem"
+    },
+    {
+      "item_id": "7e90aaf82807",
+      "title_cn": "SWE-Bench ProMax 发布：面向大规模多语言代码重构的智能体基准",
+      "summary_cn": "针对现有代码智能体基准存在测试缺陷、易被训练数据记忆等问题，研究推出SWE-Bench ProMax多语言代码重构基准。该基准包含170个来自真实提交的实例，覆盖Python、Java、TypeScript等7种编程语言，每个实例都经过专家多阶段审核：重写问题描述以保证精确性，人工审查测试套件以排除过窄或过宽的测试，过滤复杂度不足或跨文件范围小的任务。",
+      "why_it_matters_cn": "为评估代码智能体的长程、跨文件重构能力提供了更高质量的基准，可更真实地反映智能体在复杂软件工程任务中的表现。",
+      "tags": [
+        "代码智能体",
+        "基准测试",
+        "软件工程"
+      ],
+      "category": "Agent 进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09802v1",
+      "source_published_at": "2026-08-10T16:23:19+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 72.0,
+      "dedup_key": "fa985bbb48cdfa91",
+      "title_original": "SWE-Bench ProMax: Benchmarking Agents on Large-Scale Multilingual Code Refactoring"
+    },
+    {
+      "item_id": "220d3d05e070",
+      "title_cn": "GENCO统一神经求解器发布，可加速稳态电网分析",
+      "summary_cn": "研究提出GENCO几何神经校正优化器，是面向稳态输电网分析的统一神经求解器，可在单一架构与共享网络表示下处理潮流、最优潮流、状态估计三类问题。研究同时开源GridFM开发框架与大规模数据集，支持标准化数据生成与低代码训练。测试显示，GENCO在大规模潮流计算上比牛顿-拉夫逊法快30倍，最优潮流比IPOPT快85倍，状态估计比经典加权最小二乘法更鲁棒。",
+      "why_it_matters_cn": "为电力系统分析这类强物理约束的工程场景提供了神经求解器的落地方案，可在保证物理一致性的前提下大幅提升计算效率。",
+      "tags": [
+        "AI for Science",
+        "电力系统",
+        "神经求解器"
+      ],
+      "category": "模型进展",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09921v1",
+      "source_published_at": "2026-08-10T17:57:49+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "6c43a77410d04e85",
+      "title_original": "GENCO - A Unified Neural Solver Embedded in a Development Framework for Steady-State Grid Analysis"
+    },
+    {
+      "item_id": "15ac34938684",
+      "title_cn": "研究证明一致稳定算法的矩与泛化界可去除对数因子",
+      "summary_cn": "一致稳定是控制学习算法泛化误差的经典工具，此前研究将该问题转化为弱相互作用函数和的矩不等式，但其界包含额外的log n因子，并提出是否可去除该因子的问题。该研究给出肯定回答，证明了对任意p≥2，相关和的p范数上界为16pnβ+M√(2pn)，去除了log n因子，且与已知下界在常数范围内匹配。",
+      "why_it_matters_cn": "完善了统计学习理论中一致稳定性与泛化误差的定量关系，为学习算法的泛化分析提供了更紧的理论工具。",
+      "tags": [
+        "统计学习",
+        "泛化理论",
+        "数学证明"
+      ],
+      "category": "基础理论",
+      "source_name": "arxiv",
+      "source_url": "https://arxiv.org/abs/2608.09870v1",
+      "source_published_at": "2026-08-10T17:25:27+00:00",
+      "collected_at": "2026-08-12T08:21:08+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 69.0,
+      "dedup_key": "1ae9266641a59bc8",
+      "title_original": "Logarithmic-Free Moment and Generalization Bounds for Uniformly Stable Algorithms"
+    }
+  ],
+  "empty_categories": [],
+  "insufficient_note": null,
+  "grace_note": "本日标准内容窗口（2026-08-11T06:30:00+08:00 → 2026-08-12T06:30:00+08:00）内达标内容不足，已向前回看至 2026-08-08T06:30:00+08:00 补充近期动态。",
+  "generation": {
+    "llm_usage": {
+      "calls": 1,
+      "tokens": 8550
+    },
+    "collection_stats": {
+      "arxiv": {
+        "ok": true,
+        "count": 60
+      },
+      "hf_papers": {
+        "ok": true,
+        "count": 40
+      },
+      "hf_blog": {
+        "ok": true,
+        "count": 40
+      },
+      "openai": {
+        "ok": true,
+        "count": 40
+      },
+      "deepmind": {
+        "ok": true,
+        "count": 40
+      },
+      "google_ai": {
+        "ok": true,
+        "count": 20
+      },
+      "anthropic": {
+        "ok": true,
+        "count": 14
+      },
+      "mistral": {
+        "ok": true,
+        "count": 15
+      },
+      "github_releases": {
+        "ok": true,
+        "count": 5
+      }
+    }
+  }
+}
