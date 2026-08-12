@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>AI 日报 · 2026-08-12</title>
+<link rel="stylesheet" href="https://orcaxnet.github.io/ai-daily-report/assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="https://orcaxnet.github.io/ai-daily-report/">AI 日报</a>
+    <nav class="site-nav">
+      <a href="https://orcaxnet.github.io/ai-daily-report/">首页</a>
+      <a href="https://orcaxnet.github.io/ai-daily-report/archive.html">归档</a>
+      <a href="https://orcaxnet.github.io/ai-daily-report/corrections.html">更正记录</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<article class="daily">
+  <header class="daily-head">
+    <h1>AI 日报 · 2026-08-12</h1>
+    <p class="meta">信息截止：2026-08-12T06:30:00+08:00（Asia/Shanghai）｜生成时间：2026-08-12T08:23:24+08:00</p>
+    <p class="meta">内容窗口：2026-08-11T06:30:00+08:00 → 2026-08-12T06:30:00+08:00</p>
+  </header>
+
+  
+  
+  <div class="notice">本日标准内容窗口（2026-08-11T06:30:00+08:00 → 2026-08-12T06:30:00+08:00）内达标内容不足，已向前回看至 2026-08-08T06:30:00+08:00 补充近期动态。</div>
+  
+
+  
+  <section class="category-block">
+    <h2>基础理论</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09707v1" target="_blank" rel="noopener nofollow">研究提出输入凸神经网络作为数学优化的更优代理模型</a></h3>
+        <p class="summary">运筹学中常用训练后的神经网络作为优化问题的代理，主流方法是采用ReLU激活的前馈神经网络，其分段线性结构可转化为精确但计算量随网络规模增长的混合整数规划。该研究主张当底层响应近似凸或凹时，输入凸神经网络在结构上更具优势，其凸架构可带来更紧的线性规划松弛，还支持基于上境图表示的线性规划重构，并可据此构建分支定界算法。</p>
+        <p class="why"><strong>为什么重要：</strong>为需要将神经网络嵌入优化流程的工业场景提供了计算效率更高的方案选择，可降低大规模代理优化的求解成本。</p>
+        <div class="tags">
+          <span class="tag">神经网络</span><span class="tag">数学优化</span><span class="tag">运筹学</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09707v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T15:11:22+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09870v1" target="_blank" rel="noopener nofollow">研究证明一致稳定算法的矩与泛化界可去除对数因子</a></h3>
+        <p class="summary">一致稳定是控制学习算法泛化误差的经典工具，此前研究将该问题转化为弱相互作用函数和的矩不等式，但其界包含额外的log n因子，并提出是否可去除该因子的问题。该研究给出肯定回答，证明了对任意p≥2，相关和的p范数上界为16pnβ+M√(2pn)，去除了log n因子，且与已知下界在常数范围内匹配。</p>
+        <p class="why"><strong>为什么重要：</strong>完善了统计学习理论中一致稳定性与泛化误差的定量关系，为学习算法的泛化分析提供了更紧的理论工具。</p>
+        <div class="tags">
+          <span class="tag">统计学习</span><span class="tag">泛化理论</span><span class="tag">数学证明</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09870v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:25:27+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>模型进展</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09876v1" target="_blank" rel="noopener nofollow">能量结构化潜世界模型结合神经时间场实现物理一致的开放世界运动规划</a></h3>
+        <p class="summary">针对具身AI中运动规划需严格符合真实物理动力学、现有潜世界模型物理知识隐含不可复用的问题，研究提出能量结构化潜世界模型ELWM，其潜状态显式携带能量和动量，通过耗散与控制端口保证因果转移。研究进一步构建物理条件神经时间场PC-NTF，将ELWM通过程函方程融入到达时间场，生成物理 informed 的导航策略。</p>
+        <p class="why"><strong>为什么重要：</strong>为开放世界具身导航、机器人运动规划提供了物理一致性更强的方案，可显著降低碰撞率、提升导航成功率。</p>
+        <div class="tags">
+          <span class="tag">具身AI</span><span class="tag">运动规划</span><span class="tag">世界模型</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09876v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:31:18+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09819v1" target="_blank" rel="noopener nofollow">Macaron-V1 开源智能体模型系列发布，支持持续学习与自改进</a></h3>
+        <p class="summary">Macaron-V1是面向体验智能的开源智能体模型系列，围绕自适应与协作两大目标设计：自适应通过版本化模型-线束对的递归改进实现，协作采用Mixture-of-LoRA架构，冻结基础模型并组合专用LoRA适配器，每轮用户请求选择一个LoRA。旗舰版Macaron-V1-Venti基于744B GLM-5.2底座，搭配聊天、智能体、编码、GenUI四个LoRA；另有基于Qwen3.6的50B版本面向本地部署。</p>
+        <p class="why"><strong>为什么重要：</strong>为部署后持续学习的智能体系统提供了架构、算法与基础设施协同设计的参考方案，MoL架构可降低持续学习的成本与风险。</p>
+        <div class="tags">
+          <span class="tag">大模型</span><span class="tag">智能体</span><span class="tag">持续学习</span><span class="tag">LoRA</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09819v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:39:55+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/huggingface/transformers/releases/tag/v5.15.0" target="_blank" rel="noopener nofollow">Transformers v5.15.0 发布，新增Meta Muse Glimmer多模态模型</a></h3>
+        <p class="summary">Hugging Face Transformers库发布v5.15.0版本，新增Meta推出的Muse Glimmer多模态模型。该模型专为智能体场景设计，由Muse蒸馏得到30B参数，采用Apache 2.0许可，包含2B参数的ViT风格视觉感知编码器与28B参数的文本解码器，支持本地部署。</p>
+        <p class="why"><strong>为什么重要：</strong>开源30B参数级别的智能体向多模态模型，为隐私敏感的本地智能体应用提供了新的可选底座。</p>
+        <div class="tags">
+          <span class="tag">多模态模型</span><span class="tag">开源模型</span><span class="tag">Transformers</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/huggingface/transformers/releases/tag/v5.15.0" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-10T10:28:13+00:00
+          ｜抓取时间：2026-08-12T08:22:01+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09921v1" target="_blank" rel="noopener nofollow">GENCO统一神经求解器发布，可加速稳态电网分析</a></h3>
+        <p class="summary">研究提出GENCO几何神经校正优化器，是面向稳态输电网分析的统一神经求解器，可在单一架构与共享网络表示下处理潮流、最优潮流、状态估计三类问题。研究同时开源GridFM开发框架与大规模数据集，支持标准化数据生成与低代码训练。测试显示，GENCO在大规模潮流计算上比牛顿-拉夫逊法快30倍，最优潮流比IPOPT快85倍，状态估计比经典加权最小二乘法更鲁棒。</p>
+        <p class="why"><strong>为什么重要：</strong>为电力系统分析这类强物理约束的工程场景提供了神经求解器的落地方案，可在保证物理一致性的前提下大幅提升计算效率。</p>
+        <div class="tags">
+          <span class="tag">AI for Science</span><span class="tag">电力系统</span><span class="tag">神经求解器</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09921v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:57:49+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>Agent 进展</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents" target="_blank" rel="noopener nofollow">NVIDIA推出Magpie TTS开源方案，支持低延迟多语言语音智能体部署</a></h3>
+        <p class="summary">NVIDIA在Hugging Face博客介绍Magpie TTS技术方案，主打低延迟、多语言的语音智能体构建，提供开源权重与完整部署控制权。</p>
+        <p class="why"><strong>为什么重要：</strong>为需要构建多语言语音交互智能体的团队提供了低延迟的开源TTS选项，可用于客服、虚拟助手等场景。</p>
+        <div class="tags">
+          <span class="tag">语音合成</span><span class="tag">NVIDIA</span><span class="tag">开源</span><span class="tag">智能体</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents" target="_blank" rel="noopener nofollow">hf_blog</a>
+          ｜原始发布时间：2026-08-10T16:25:36+00:00
+          ｜抓取时间：2026-08-12T08:21:11+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09855v1" target="_blank" rel="noopener nofollow">研究提出自主科研智能体应借鉴模糊测试的反馈导向范式</a></h3>
+        <p class="summary">当前自主科研智能体多采用“生成-排序”范式，难以应对稀疏反馈问题。研究认为科研智能体的控制循环更接近灰盒模糊测试：每次执行都应通过覆盖率类信号获得认知进展的密集反馈，再基于该信号调整下一步实验方向，而非仅对完成的实验排序。研究提出应通过受控测试验证进展信号的有效性、反馈导向搜索的效率，以及受保护验证对减少错误发现的作用。</p>
+        <p class="why"><strong>为什么重要：</strong>为自主科研智能体的架构设计提供了新的思路，反馈机制而非生成能力可能是提升科研效率的核心瓶颈。</p>
+        <div class="tags">
+          <span class="tag">科研智能体</span><span class="tag">模糊测试</span><span class="tag">自主研究</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09855v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:13:02+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：编辑判断（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09802v1" target="_blank" rel="noopener nofollow">SWE-Bench ProMax 发布：面向大规模多语言代码重构的智能体基准</a></h3>
+        <p class="summary">针对现有代码智能体基准存在测试缺陷、易被训练数据记忆等问题，研究推出SWE-Bench ProMax多语言代码重构基准。该基准包含170个来自真实提交的实例，覆盖Python、Java、TypeScript等7种编程语言，每个实例都经过专家多阶段审核：重写问题描述以保证精确性，人工审查测试套件以排除过窄或过宽的测试，过滤复杂度不足或跨文件范围小的任务。</p>
+        <p class="why"><strong>为什么重要：</strong>为评估代码智能体的长程、跨文件重构能力提供了更高质量的基准，可更真实地反映智能体在复杂软件工程任务中的表现。</p>
+        <div class="tags">
+          <span class="tag">代码智能体</span><span class="tag">基准测试</span><span class="tag">软件工程</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09802v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:23:19+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>AI 应用</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/openai/openai-python/releases/tag/v2.54.0" target="_blank" rel="noopener nofollow">OpenAI Python SDK 发布 v2.54.0 版本</a></h3>
+        <p class="summary">该版本新增功能为API添加了新的Responses模型标识符；修复方面明确了音频上传的元数据要求；日常维护将生成文件的头部归属更新为Castiron。</p>
+        <p class="why"><strong>为什么重要：</strong>使用OpenAI Python SDK的开发者需注意更新适配新的Responses模型标识，以及音频上传的元数据规范变化。</p>
+        <div class="tags">
+          <span class="tag">OpenAI</span><span class="tag">SDK</span><span class="tag">开发工具</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/openai/openai-python/releases/tag/v2.54.0" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-11T18:45:59+00:00
+          ｜抓取时间：2026-08-12T08:21:58+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.15" target="_blank" rel="noopener nofollow">LangChain 发布 langchain==1.3.15 版本</a></h3>
+        <p class="summary">该版本新增功能包括在AgentMiddleware上暴露trace_policy、为wrap_tool_call添加state_schema参数、从messages投影中过滤内部中间件模型调用；修复了SummarizationMiddleware摘要失败时的历史保留、LLMToolEmulator导入错误、PIIMatch重导出等问题；同时更新了依赖与文档。</p>
+        <p class="why"><strong>为什么重要：</strong>LangChain用户可关注新增的追踪策略、工具调用状态 schema 等能力，评估是否升级以优化智能体开发体验。</p>
+        <div class="tags">
+          <span class="tag">LangChain</span><span class="tag">智能体框架</span><span class="tag">开发工具</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.15" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-11T19:11:09+00:00
+          ｜抓取时间：2026-08-12T08:22:05+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.5.4" target="_blank" rel="noopener nofollow">LangChain 发布 langchain-core==1.5.4 版本</a></h3>
+        <p class="summary">该版本核心修复包括兼容pydantic 2.14、阻止StructuredPrompt修改调用方kwargs、保留RootModel可运行对象的扁平工具参数schema、关闭流式追踪器内部创建的事件循环、保留OpenAI文件块等；同时更新了多项依赖与文档。</p>
+        <p class="why"><strong>为什么重要：</strong>使用LangChain核心模块的开发者需注意pydantic兼容性、流式追踪等修复，可根据自身场景评估升级。</p>
+        <div class="tags">
+          <span class="tag">LangChain</span><span class="tag">核心库</span><span class="tag">开发工具</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.5.4" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-11T18:03:10+00:00
+          ｜抓取时间：2026-08-12T08:22:05+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.5.5" target="_blank" rel="noopener nofollow">LangChain 发布 langchain-anthropic==1.5.5 版本</a></h3>
+        <p class="summary">该版本修复了使用量元数据中的推理token上报问题、Claude文件工具中间件重命名时的KeyError问题、无凭证配置时的错误提示不清晰问题，同时刷新了模型配置数据。</p>
+        <p class="why"><strong>为什么重要：</strong>使用LangChain对接Anthropic Claude模型的开发者可关注推理token统计、文件工具等修复，按需升级。</p>
+        <div class="tags">
+          <span class="tag">LangChain</span><span class="tag">Anthropic</span><span class="tag">开发工具</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.5.5" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-11T19:16:55+00:00
+          ｜抓取时间：2026-08-12T08:22:05+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>可选观察</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09867v1" target="_blank" rel="noopener nofollow">研究发现可从专有大模型API中窃取加密推理轨迹的漏洞</a></h3>
+        <p class="summary">主流大模型厂商将推理过程以加密文本块形式返回客户端，随后续请求回传以保护知识产权。研究发现同一厂商生态内的加密推理块可跨会话、跨用户、跨模型互换，攻击者可将强模型的加密推理块注入同厂商防护较弱的模型，迫使后者解密输出明文推理内容，无需直接破解强模型。该漏洞可被用于绕过反蒸馏机制、大规模提取公开日志中的隐私数据等。</p>
+        <p class="why"><strong>为什么重要：</strong>提示大模型服务商需修复加密推理块的跨模型兼容性漏洞，也提醒开发者不要公开包含加密推理块的会话日志，避免隐私泄露。</p>
+        <div class="tags">
+          <span class="tag">大模型安全</span><span class="tag">推理安全</span><span class="tag">漏洞</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09867v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:24:50+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09828v1" target="_blank" rel="noopener nofollow">多智能体AI安全可作为制度设计问题研究</a></h3>
+        <p class="summary">POLIS研究项目的首篇论文提出，多智能体系统的安全取决于算法制度的设计，包括任务委派、信息流动、动作执行、资源共享等规则。研究通过5280个episode的测试套件验证：详细的宪法式提示可实现0/384的违规率；感知来源的可执行守卫也实现0/384违规率，且拦截的51次违规尝试中有44次后续可安全完成；而本地状态守卫在来源不变但可见策略变化的场景中违规率达22/96。</p>
+        <p class="why"><strong>为什么重要：</strong>为多智能体系统的安全治理提供了制度设计的实证参考，来源追踪类守卫比本地状态守卫更能防范规则规避。</p>
+        <div class="tags">
+          <span class="tag">多智能体</span><span class="tag">AI安全</span><span class="tag">制度设计</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09828v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:47:01+00:00
+          ｜抓取时间：2026-08-12T08:21:08+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+
+  <nav class="daily-nav">
+    <a href="https://orcaxnet.github.io/ai-daily-report/daily/2026-08-11.html">‹ 上一期（2026-08-11）</a>
+    
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。</p>
+    <p>本页内容由 AI 辅助整理生成，信息以原始来源为准。发现错误请通过 <a href="https://orcaxnet.github.io/ai-daily-report/corrections.html">更正入口</a> 反馈。统计分析仅使用匿名聚合数据，不采集个人身份信息。</p>
+  </div>
+</footer>
+</body>
+</html>
