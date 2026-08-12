@@ -60,19 +60,12 @@ if wt.exists():
     run(["git", "worktree", "remove", str(wt), "--force"], check=False)
 run(["git", "worktree", "add", str(wt), "gh-pages"])
 try:
-    # 清空 worktree（保留 .git）
-    for item in wt.iterdir():
-        if item.name == ".git":
-            continue
-        if item.is_dir() and not item.is_symlink():
-            shutil.rmtree(item)
-        else:
-            item.unlink()
-    # 复制 site 内容（保留本地 site/ 副本）
+    # 在远端 gh-pages 历史站点上叠加本地增量。全量清空会在全新运行目录中
+    # 删除未存在于本地 site/ 的往期页面，破坏历史日报可达性。
     for item in site.iterdir():
         dst = wt / item.name
         if item.is_dir():
-            shutil.copytree(item, dst)
+            shutil.copytree(item, dst, dirs_exist_ok=True)
         else:
             shutil.copy2(item, dst)
     run(["git", "-C", str(wt), "add", "-A"])
