@@ -4,12 +4,83 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import logging
-from urllib.parse import urlparse
+import time
+from dataclasses import dataclass
+from urllib.parse import urlparse, urlunparse
+
+import requests
 
 from .models import CATEGORIES, CORE_CATEGORIES, FACT_TYPES, Report
-from .util import http_get
-
 log = logging.getLogger(__name__)
+
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+}
+
+
+@dataclass(frozen=True)
+class LinkResult:
+    original_url: str
+    canonical_url: str
+    usable: bool
+    reason: str
+    status_code: int | None = None
+
+
+def normalize_url(url: str) -> str:
+    """规范化 URL，避免把缺少根路径斜杠等价地址视为不同链接。"""
+    parsed = urlparse(url.strip())
+    path = parsed.path or "/"
+    return urlunparse((parsed.scheme.lower(), parsed.netloc.lower(), path,
+                       parsed.params, parsed.query, ""))
+
+
+def resolve_link(url: str, retries: int = 2, backoff: float = 0.5,
+                 session=None, sleep_fn=time.sleep, timeout: int = 15) -> LinkResult:
+    """用浏览器式 GET 跟随重定向并分类结果；只有确认的硬失效才立即判死链。
+
+    429、5xx 和网络错误按退避重试，耗尽后视为本次最终不可达；单次
+    403/405 不作为死链，避免反爬/HEAD 策略造成假阴性。
+    """
+    original = normalize_url(url)
+    client = session or requests.Session()
+    last_status = None
+    last_reason = ""
+
+    request_url = original
+    for attempt in range(retries + 1):
+        try:
+            response = client.get(
+                request_url, headers=BROWSER_HEADERS, timeout=timeout,
+                allow_redirects=True,
+            )
+            last_status = response.status_code
+            canonical = normalize_url(response.url or original)
+            if response.status_code < 400:
+                return LinkResult(original, canonical, True, "ok", response.status_code)
+            if response.status_code in (404, 410):
+                return LinkResult(original, canonical, False, "hard_failure", response.status_code)
+            if response.status_code in (429,) or response.status_code >= 500:
+                last_reason = "transient_failure"
+            else:
+                # 403/405 等可能来自反爬或方法策略；产品决策要求不能据此判死链。
+                parsed = urlparse(canonical)
+                if (parsed.netloc == "openai.com" and parsed.path.startswith("/index/")
+                        and not parsed.path.endswith("/")):
+                    canonical = urlunparse(parsed._replace(path=parsed.path + "/"))
+                return LinkResult(original, canonical, True, "soft_http_failure", response.status_code)
+        except requests.RequestException as exc:
+            last_reason = f"transient_failure: {exc.__class__.__name__}"
+
+        if attempt < retries:
+            sleep_fn(backoff * (2 ** attempt))
+
+    return LinkResult(original, original, False, last_reason or "transient_failure", last_status)
 
 REQUIRED_ITEM_FIELDS = [
     "item_id", "title_cn", "summary_cn", "why_it_matters_cn", "tags",
@@ -72,30 +143,23 @@ def validate_report(report: Report, check_links: bool = True, max_link_checks: i
     # 外链可达性（抽样，HTTP 200）
     if check_links and report.items:
         targets = [i.source_url for i in report.items[:max_link_checks]]
-        broken = _check_links(targets, link_workers)
-        for url in broken:
-            errors.append(f"外链不可达: {url}")
+        results = _check_links(targets, link_workers)
+        by_original = {result.original_url: result for result in results}
+        for item in report.items[:max_link_checks]:
+            result = by_original[normalize_url(item.source_url)]
+            if result.usable:
+                item.source_url = result.canonical_url
+            else:
+                errors.append(f"外链不可达({result.reason}): {item.source_url}")
 
     if errors:
         raise ValidationError("；".join(errors[:30]))
     log.info("validate ok: %d items, %d categories", n, len({i.category for i in report.items}))
 
 
-def _check_links(urls, workers: int = 4) -> list:
-    def check(url):
-        try:
-            r = http_get(url, timeout=12)
-            # GitHub/部分站点对 HEAD 可能 403，宽松处理：4xx 视为可达但记录
-            return None if r.status_code < 400 else url
-        except Exception:
-            return url
-
-    broken = []
+def _check_links(urls, workers: int = 4) -> list[LinkResult]:
     with cf.ThreadPoolExecutor(max_workers=workers) as ex:
-        for res in ex.map(check, urls):
-            if res:
-                broken.append(res)
-    return broken
+        return list(ex.map(resolve_link, urls))
 
 
 def mobile_check(html: str) -> list:

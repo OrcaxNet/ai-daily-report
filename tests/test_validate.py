@@ -1,7 +1,10 @@
+import requests
 import pytest
 
 from ai_daily_report.models import Item, Report
-from ai_daily_report.validate import validate_report, ValidationError, mobile_check
+from ai_daily_report.validate import (
+    validate_report, ValidationError, mobile_check, normalize_url, resolve_link,
+)
 
 
 def _item(i=0, category="模型进展", **overrides):
@@ -74,3 +77,75 @@ def test_item_count_out_of_range_requires_note():
 def test_mobile_check():
     assert mobile_check('<html><head><meta name="viewport" content="width=device-width"></head></html>') == []
     assert mobile_check("<html><head></head></html>") != []
+
+
+class _Response:
+    def __init__(self, status_code, url):
+        self.status_code = status_code
+        self.url = url
+
+
+class _Session:
+    def __init__(self, effects):
+        self.effects = iter(effects)
+        self.get_calls = 0
+        self.head_calls = 0
+
+    def get(self, *args, **kwargs):
+        self.get_calls += 1
+        effect = next(self.effects)
+        if isinstance(effect, Exception):
+            raise effect
+        return effect
+
+    def head(self, *args, **kwargs):
+        self.head_calls += 1
+        return _Response(405, args[0])
+
+
+def test_resolve_link_follows_redirect_and_stores_canonical_url():
+    session = _Session([_Response(200, "https://openai.com/index/example/")])
+    result = resolve_link("https://openai.com/index/example", session=session)
+    assert result.usable
+    assert result.canonical_url == "https://openai.com/index/example/"
+
+
+def test_resolve_link_uses_get_not_head_false_negative():
+    session = _Session([_Response(200, "https://example.com/article/")])
+    result = resolve_link("https://example.com/article", session=session)
+    assert result.usable
+    assert session.get_calls == 1
+    assert session.head_calls == 0
+
+
+def test_resolve_link_retries_transient_errors_with_backoff():
+    session = _Session([
+        _Response(429, "https://example.com/"),
+        requests.Timeout("timed out"),
+        _Response(200, "https://example.com/final/"),
+    ])
+    sleeps = []
+    result = resolve_link("https://example.com", session=session, retries=2,
+                          backoff=0.1, sleep_fn=sleeps.append)
+    assert result.usable
+    assert result.canonical_url == "https://example.com/final/"
+    assert sleeps == [0.1, 0.2]
+
+
+def test_resolve_link_confirms_404_as_hard_failure():
+    session = _Session([_Response(404, "https://example.com/missing/")])
+    result = resolve_link("https://example.com/missing", session=session)
+    assert not result.usable
+    assert result.reason == "hard_failure"
+
+
+def test_openai_soft_403_uses_known_canonical_trailing_slash():
+    session = _Session([_Response(403, "https://openai.com/index/example")])
+    result = resolve_link("https://openai.com/index/example", session=session)
+    assert result.usable
+    assert result.reason == "soft_http_failure"
+    assert result.canonical_url == "https://openai.com/index/example/"
+
+
+def test_normalize_url_strips_fragment_and_adds_root_slash():
+    assert normalize_url("HTTPS://EXAMPLE.COM#part") == "https://example.com/"

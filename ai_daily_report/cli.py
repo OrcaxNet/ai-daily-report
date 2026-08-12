@@ -19,7 +19,7 @@ from .scoring import score_candidate, dedup_merge, filter_by_window, SCORE_THRES
 from .generate import generate_items
 from .llm import LLMClient, LLMError, CostGuardExceeded
 from .assemble import render_site
-from .validate import validate_report
+from .validate import validate_report, resolve_link
 from .publish import publish_site
 from .notify import record_run
 
@@ -74,6 +74,67 @@ def _select_items(candidates, max_items: int = 15, min_items: int = 8):
     return selected, empty_categories, insufficient
 
 
+def _replace_unreachable(selected, candidates, min_items: int = 8,
+                         resolver=resolve_link):
+    """校验入选链接并从已评分池替换不可达候选，同栏目优先。"""
+    scored_pool = []
+    for candidate in candidates:
+        score = score_candidate(candidate)
+        if score >= SCORE_THRESHOLD:
+            scored_pool.append((candidate, score))
+    scored_pool.sort(key=lambda pair: pair[1], reverse=True)
+
+    used = {candidate.dedup_key_hint for candidate, _ in selected}
+    checked = {}
+
+    def check(candidate):
+        result = checked.get(candidate.source_url)
+        if result is None:
+            result = resolver(candidate.source_url)
+            checked[candidate.source_url] = result
+        if result.usable:
+            candidate.source_url = result.canonical_url
+        return result
+
+    output = []
+    removed_categories = set()
+    for candidate, score in selected:
+        result = check(candidate)
+        if result.usable:
+            output.append((candidate, score))
+            continue
+
+        removed_categories.add(candidate.category_hint)
+        alternatives = [
+            pair for pair in scored_pool
+            if pair[0].dedup_key_hint not in used
+        ]
+        alternatives.sort(key=lambda pair: pair[0].category_hint != candidate.category_hint)
+        replacement = None
+        for alternate, alternate_score in alternatives:
+            used.add(alternate.dedup_key_hint)
+            if check(alternate).usable:
+                replacement = (alternate, alternate_score)
+                break
+        if replacement:
+            output.append(replacement)
+            log.warning("外链不可达，已替换候选: %s -> %s", candidate.source_url,
+                        replacement[0].source_url)
+        else:
+            log.warning("外链不可达且候选池耗尽，移除: %s (%s)", candidate.source_url,
+                        result.reason)
+
+    if removed_categories and len(output) < min_items:
+        raise RuntimeError(f"外链替换耗尽后仅剩 {len(output)} 条，低于硬门槛 {min_items} 条")
+
+    before_core = {candidate.category_hint for candidate, _ in selected} & set(CORE_CATEGORIES)
+    after_core = {candidate.category_hint for candidate, _ in output} & set(CORE_CATEGORIES)
+    lost_core = before_core - after_core
+    if lost_core:
+        raise RuntimeError("外链替换耗尽后核心栏目缺失: " + "、".join(sorted(lost_core)))
+    return output
+
+
 def _build_report(date: str, opts) -> Report:
     state_store = StateStore(REPO_ROOT)
     sources_cfg = load_sources()
@@ -100,6 +161,9 @@ def _build_report(date: str, opts) -> Report:
             f"已向前回看至 {grace_start} 补充近期动态。"
         )
     selected, empty_categories, insufficient = _select_items(candidates, max_items=15, min_items=8)
+    selected = _replace_unreachable(selected, candidates, min_items=8)
+    if len(selected) >= 8:
+        insufficient = None
     if not selected:
         # 无合格条目：仍产出空栏目日报（不发布低质内容）
         selected = []
