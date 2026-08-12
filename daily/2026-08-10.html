@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>AI 日报 · 2026-08-10</title>
+<link rel="stylesheet" href="https://orcaxnet.github.io/ai-daily-report/assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="https://orcaxnet.github.io/ai-daily-report/">AI 日报</a>
+    <nav class="site-nav">
+      <a href="https://orcaxnet.github.io/ai-daily-report/">首页</a>
+      <a href="https://orcaxnet.github.io/ai-daily-report/archive.html">归档</a>
+      <a href="https://orcaxnet.github.io/ai-daily-report/corrections.html">更正记录</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<article class="daily">
+  <header class="daily-head">
+    <h1>AI 日报 · 2026-08-10</h1>
+    <p class="meta">信息截止：2026-08-10T06:30:00+08:00（Asia/Shanghai）｜生成时间：2026-08-10T18:52:41+08:00</p>
+    <p class="meta">内容窗口：2026-08-09T06:30:00+08:00 → 2026-08-10T06:30:00+08:00</p>
+  </header>
+
+  
+  
+  <div class="notice">本日标准内容窗口（2026-08-09T06:30:00+08:00 → 2026-08-10T06:30:00+08:00）内达标内容不足，已向前回看至 2026-08-06T06:30:00+08:00 补充近期动态。</div>
+  
+
+  
+  <section class="category-block">
+    <h2>基础理论</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07341v1" target="_blank" rel="noopener nofollow">基准污染缓解评估新指标SA-PPG与RailCap方法提出</a></h3>
+        <p class="summary">公开基准测试数据易泄露到预训练语料中导致评估分数虚高，现有污染缓解评估指标G-AP存在无法表征单题性能、过抑制与欠抑制相互抵消等缺陷。该研究提出分层聚合单题概率差指标SA-PPG，通过采样估计每题求解概率并与干净模型按题对比后分层聚合。同时提出RailCap方法，在生成过程中判断污染，当采样落入贪心轨迹时将下一token限制为次优选项，逐步累积抑制直至响应分布足够分散。</p>
+        <p class="why"><strong>为什么重要：</strong>为大模型基准评估的污染问题提供了更严谨的度量方法与缓解方案，有助于提升模型能力评估的可信度。</p>
+        <div class="tags">
+          <span class="tag">模型评估</span><span class="tag">数据污染</span><span class="tag">基准测试</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07341v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T15:37:03+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07323v1" target="_blank" rel="noopener nofollow">研究表明SwiGLU的开放正尾并非语言模型FFN必需</a></h3>
+        <p class="summary">该研究测试了解码器-only语言模型前馈网络是否必须依赖SwiGLU的开放正尾，提出基于忆阻分支结构的闭尾门控单元MemGLU作为对比。在9M和30M参数规模的配对预训练实验中，MemGLU的验证集NLL与SwiGLU差距约在0.1%以内。机制诊断显示两者门控使用方式不同但损失相近，表明模型会适应预训练时可用的门控结构。</p>
+        <p class="why"><strong>为什么重要：</strong>挑战了SwiGLU作为主流FFN结构的必要性假设，为低功耗、硬件友好的门控单元设计提供了实验依据。</p>
+        <div class="tags">
+          <span class="tag">模型架构</span><span class="tag">前馈网络</span><span class="tag">SwiGLU</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07323v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T15:20:24+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07419v1" target="_blank" rel="noopener nofollow">基于双层优化的LLM校准方法：突破事后温度缩放的域依赖局限</a></h3>
+        <p class="summary">偏好对齐常导致LLM过度自信、校准性差，传统事后温度缩放存在域依赖问题，跨域泛化能力弱。该研究提出通过最大化预测分布熵作为校准目标，直接缓解过度集中的预测问题，并借鉴温度缩放思路构建双层优化框架：下层在参数化损失下训练模型，上层选择损失超参数以最大化熵。研究采用高效一阶近似避免显式二阶计算，实验显示该方法在选择题与开放式生成问答中均能实现良好校准，尤其在域外泛化上优势明显。</p>
+        <p class="why"><strong>为什么重要：</strong>为大模型校准提供了训练阶段的优化方案，可提升模型在跨域场景下的置信度可靠性，适合对输出可信度要求高的行业应用。</p>
+        <div class="tags">
+          <span class="tag">模型校准</span><span class="tag">双层优化</span><span class="tag">偏好对齐</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07419v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T17:05:10+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>模型进展</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07427v1" target="_blank" rel="noopener nofollow">视觉语言模型可大幅降低AI推理能耗并提升时序数据任务精度</a></h3>
+        <p class="summary">LLM推理能耗占AI运营能耗90%以上，且与输入token数正相关，在电信网络分析等数值时序场景中token量极高。研究发现将时序数据编码为2D图像输入VLM，可在Llama-3.2-90B、Qwen2.5-VL-72B等模型上实现3.6-10.4倍的输入token减少，对应1.8-2.5倍的推理能耗降低。精度方面，微调后的Llama-3.2-90B-Vision在电信异常检测任务上的精度比纯文本版高220.7%，且可解决24个KPI场景下文本超出128K上下文窗口的问题。</p>
+        <p class="why"><strong>为什么重要：</strong>为高吞吐数值时序分析场景提供了兼顾能耗与精度的技术路径，尤其适合电信边缘部署、CloudRAN等对算力成本敏感的行业场景。</p>
+        <div class="tags">
+          <span class="tag">多模态模型</span><span class="tag">能耗优化</span><span class="tag">时序分析</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07427v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T17:14:45+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07363v1" target="_blank" rel="noopener nofollow">QFCQT：面向高波动时序预测的混沌门控Quantformer框架</a></h3>
+        <p class="summary">非平稳时序预测受长程依赖、局部波动突变、结构偏移等问题困扰，现有Transformer预测器的前馈模块多采用平滑静态激活，对突变机制不敏感。该研究提出量子分形启发的混沌门控Quantformer框架QFCQT，包含数值编码器、可学习Lee振荡器激活模块、平滑-混沌门控融合三部分，通过8组参数化Lee振荡器的软叠加自适应捕捉不同非线性响应模式。</p>
+        <p class="why"><strong>为什么重要：</strong>为金融、工业传感等高波动时序预测场景提供了新的架构思路，可提升对突变 regime 的建模能力。</p>
+        <div class="tags">
+          <span class="tag">时序预测</span><span class="tag">Transformer</span><span class="tag">混沌激活</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07363v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T16:05:21+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07424v1" target="_blank" rel="noopener nofollow">CoBa：通过计算均衡路由实现低成本测试时扩展</a></h3>
+        <p class="summary">现有测试时扩展通常沿单一维度增加算力，在固定推理预算下存在生成、验证、停止的资源分配矛盾。该研究提出计算均衡路由策略CoBa，先获取少量候选答案，再广泛应用低成本验证，将不确定或高价值候选路由到更强的验证器。在MATH-500、AIME 2024/2025等3129个示例评估中，CoBa-Routed-Strong达到85.13%的宏准确率，与自评估加权投票的85.20%相当，但参数加权token减少49.1%；与best-of-16多数投票准确率仅差0.01个百分点，token减少58.9%。</p>
+        <p class="why"><strong>为什么重要：</strong>为推理预算有限的本地推理系统提供了更高效的测试时算力分配方案，可在接近最优性能的前提下大幅降低推理成本。</p>
+        <div class="tags">
+          <span class="tag">推理优化</span><span class="tag">测试时扩展</span><span class="tag">路由策略</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07424v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T17:12:13+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07401v1" target="_blank" rel="noopener nofollow">DynaCrys：基于动态空间群扩散的晶体生成模型</a></h3>
+        <p class="summary">新型晶体材料搜索需同时建模离散晶体对称性、元素组成与连续几何结构，该研究提出DynaCrys生成模型，让空间群与Wyckoff占位、元素通过耦合符号扩散过程共同演化。空间群转换遵循晶体学群-子群关系，空间群变化时，预训练对称码本为合法约束的随机解码器与对称约束的晶体几何模型提供统一的Wyckoff词汇表示。经两个独立弛豫评估引擎验证，DynaCrys在稳定、独特、新型晶体的对称感知发现上达到当前最优性能。</p>
+        <p class="why"><strong>为什么重要：</strong>为材料科学领域的晶体生成提供了更高效的AI模型，可加速新型功能材料的发现与研发流程。</p>
+        <div class="tags">
+          <span class="tag">AI for Science</span><span class="tag">生成模型</span><span class="tag">材料发现</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07401v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T16:45:51+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07400v1" target="_blank" rel="noopener nofollow">FinRank：面向SEC文件的证据导向金融问答与检索基准</a></h3>
+        <p class="summary">现有金融问答评估仅关注答案正确性，但SEC文件中即使数值正确的答案也可能基于错误证据，同类事实常跨章节、跨报告期、跨同类公司重复出现。FinRank基准针对该溯源敏感检索问题，包含22家公司10-K与10-Q文件上的1185条人工标注问答记录，每条包含参考答案、黄金支撑段落与人工构建的难负例。基线测试显示即使7B指令微调嵌入模型在 pooled 证据语料上的Recall@10仅44.8%，难负例下成对准确率下降13.0-20.5个百分点。</p>
+        <p class="why"><strong>为什么重要：</strong>为金融问答系统的证据可靠性评估提供了标准基准，可推动金融AI系统从“答案正确”向“证据可追溯”升级。</p>
+        <div class="tags">
+          <span class="tag">金融AI</span><span class="tag">基准测试</span><span class="tag">检索问答</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07400v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T16:45:39+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07393v1" target="_blank" rel="noopener nofollow">FedDOSE：分解站点效应的脑动态功能连接联邦学习框架</a></h3>
+        <p class="summary">多站点fMRI数据联邦学习面临统计异质性挑战，且现有方法多基于静态功能连接，忽略脑网络动态信息。该研究提出FedDOSE框架，通过模块化引导的Tucker分解块编码高维动态功能连接张量，高效捕捉模块级时空模式；再结合最优传输重心公式与Procrustes分析，在全局层面对齐各站点的类别原型。在ABIDE-I、ABIDE-II、ADHD-200三个多站点静息态fMRI数据集上，FedDOSE在自闭症与多动症检测任务中表现优于现有最优方法。</p>
+        <p class="why"><strong>为什么重要：</strong>为多站点医学影像联邦学习提供了应对站点异质性的新方案，可提升脑疾病辅助诊断模型的跨站点泛化能力。</p>
+        <div class="tags">
+          <span class="tag">联邦学习</span><span class="tag">医学AI</span><span class="tag">脑成像</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07393v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T16:37:30+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>Agent 进展</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07371v1" target="_blank" rel="noopener nofollow">TRIAL：面向智能体强化学习的轨迹相对后见蒸馏方法</a></h3>
+        <p class="summary">现有智能体强化学习的后见奖励信号分配存在跨轮次不清晰的问题，该研究提出轨迹相对后见蒸馏框架TRIAL，采用统一的轮次对齐评分协议。TRIAL通过普通与后见条件上下文的对数概率差确定token级监督方向与强度，并在整条轨迹上联合归一化轮级幅度。实验显示TRIAL在WebShop与ALFWorld的8组骨干模型与环境组合中全面优于GRPO，在WebShop+Qwen3-1.7B设置下将成功率从56.4%提升至75.2%。</p>
+        <p class="why"><strong>为什么重要：</strong>为智能体强化学习的稀疏奖励问题提供了更高效的后见监督分配方案，可直接应用于网页操作、具身智能等Agent场景的性能提升。</p>
+        <div class="tags">
+          <span class="tag">强化学习</span><span class="tag">Agent</span><span class="tag">后见蒸馏</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07371v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T16:12:58+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07437v1" target="_blank" rel="noopener nofollow">Fisher-R1：面向可靠假设检验的LLM智能体</a></h3>
+        <p class="summary">现有LLM智能体虽能端到端完成数据分析，但常出现细微推断错误导致结论错误，且现有基准很少验证p值的统计有效性。该研究构建了包含425个开放式真实假设检验任务的P-Bench基准，覆盖经济、生物、医学领域。同时推出Fisher-R1开源智能体，通过合成任务与强化学习训练，在P-Bench上14B版本相比DeepSeek-V4-Pro单轮成功率平均相对提升21%，最难任务上提升达26%。</p>
+        <p class="why"><strong>为什么重要：</strong>为科研数据分析场景的LLM应用提供了可靠的统计推理能力基准与模型方案，可降低自动化科研分析的结论错误风险。</p>
+        <div class="tags">
+          <span class="tag">科研AI</span><span class="tag">Agent</span><span class="tag">假设检验</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07437v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T17:22:00+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>AI 应用</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.121.0" target="_blank" rel="noopener nofollow">Anthropic Python SDK v0.121.0发布：新增会话预算、顾问工具等能力</a></h3>
+        <p class="summary">该版本新增mid-conversation-tool-changes-2026-07-01测试版API，支持会话预算、顾问工具、固定推理位置及GitHub技能自动加载。同时移除了已退役的Claude Opus 4.1模型，并对文档描述进行了小幅更新。</p>
+        <p class="why"><strong>为什么重要：</strong>开发者可直接调用新的会话管控与工具能力，需注意已下线模型的兼容性调整，及时更新SDK版本。</p>
+        <div class="tags">
+          <span class="tag">Anthropic</span><span class="tag">SDK</span><span class="tag">工具更新</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.121.0" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-07T17:10:51+00:00
+          ｜抓取时间：2026-08-10T18:51:35+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.4.2" target="_blank" rel="noopener nofollow">LangChain发布langchain-openai 1.4.2版本：修复上下文超限等问题</a></h3>
+        <p class="summary">该版本修复了ContextWindowExceededError处理、LangChain生成的内容块ID过滤、Responses的text选项保留、MCP授权信息脱敏等问题。同时更新了模型配置文件，并对3个目录的7项依赖进行了小版本升级。</p>
+        <p class="why"><strong>为什么重要：</strong>开发者可升级版本以解决上下文窗口超限处理、授权信息安全等问题，提升OpenAI接口调用的稳定性与安全性。</p>
+        <div class="tags">
+          <span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">工具更新</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.4.2" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-07T13:58:15+00:00
+          ｜抓取时间：2026-08-10T18:51:40+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>可选观察</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07446v1" target="_blank" rel="noopener nofollow">基于分类法的开源AI风险缓解工具分析</a></h3>
+        <p class="summary">企业LLM应用从试点走向生产，手动危害识别与缓解难以规模化，且现有工具格局碎片化、与治理框架不匹配。该论文提出结构化协议，通过分类法驱动的分析，将21个主流开源LLM评估与安全工具的能力映射到扩展版MIT AI风险缓解与响应分类法的32个子类别中。分析发现工具高度集中于技术与运营控制，治理、法律监管及金融市场控制领域存在明显空白。</p>
+        <p class="why"><strong>为什么重要：</strong>为企业选型开源AI安全与治理工具提供了统一的能力映射框架，可快速识别风险覆盖缺口，指导分层风险缓解架构搭建。</p>
+        <div class="tags">
+          <span class="tag">AI治理</span><span class="tag">风险评估</span><span class="tag">开源工具</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07446v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T17:33:09+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.07430v1" target="_blank" rel="noopener nofollow">扩散大语言模型存在机制性安全漏洞，可通过安全神经元实现越狱</a></h3>
+        <p class="summary">扩散大语言模型（DLLM）采用迭代并行去噪替代自回归下一词预测，但其内部安全机制尚不明确。研究发现DLLM的安全对齐具有稀疏性且跨架构可迁移：从自回归模型初始化的DLLM继承了相同的机制性安全足迹，可通过安全神经元映射与剪枝实现迁移攻击，自剪枝可将LLaDA的攻击成功率从2.6%提升至73.8%。研究进一步提出SN-Guided Diffusion黑盒越狱框架，仅需每个提示20次生成，在多个开源与闭源模型上的迁移攻击成功率最高达86.9%。</p>
+        <p class="why"><strong>为什么重要：</strong>揭示了扩散大语言模型的安全脆弱性，为DLLM的安全对齐研究提供了机制层面的参考，也提示应用方需重视扩散模型的越狱风险。</p>
+        <div class="tags">
+          <span class="tag">AI安全</span><span class="tag">扩散模型</span><span class="tag">越狱攻击</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.07430v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-07T17:17:18+00:00
+          ｜抓取时间：2026-08-10T18:50:40+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+
+  <nav class="daily-nav">
+    
+    
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。</p>
+    <p>本页内容由 AI 辅助整理生成，信息以原始来源为准。发现错误请通过 <a href="https://orcaxnet.github.io/ai-daily-report/corrections.html">更正入口</a> 反馈。统计分析仅使用匿名聚合数据，不采集个人身份信息。</p>
+  </div>
+</footer>
+</body>
+</html>
