@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>AI 日报 · 2026-08-11</title>
+<link rel="stylesheet" href="https://orcaxnet.github.io/ai-daily-report/assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="https://orcaxnet.github.io/ai-daily-report/">AI 日报</a>
+    <nav class="site-nav">
+      <a href="https://orcaxnet.github.io/ai-daily-report/">首页</a>
+      <a href="https://orcaxnet.github.io/ai-daily-report/archive.html">归档</a>
+      <a href="https://orcaxnet.github.io/ai-daily-report/corrections.html">更正记录</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<article class="daily">
+  <header class="daily-head">
+    <h1>AI 日报 · 2026-08-11</h1>
+    <p class="meta">信息截止：2026-08-11T06:30:00+08:00（Asia/Shanghai）｜生成时间：2026-08-12T08:20:44+08:00</p>
+    <p class="meta">内容窗口：2026-08-10T06:30:00+08:00 → 2026-08-11T06:30:00+08:00</p>
+  </header>
+
+  
+  
+
+  
+  <section class="category-block">
+    <h2>基础理论</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09707v1" target="_blank" rel="noopener nofollow">输入凸神经网络作为数学优化的代理模型</a></h3>
+        <p class="summary">运筹学中常将训练好的神经网络作为代理嵌入优化问题，主流方法是采用ReLU激活的前馈神经网络（FNN），其分段线性结构可转化为精确但计算量大的混合整数规划（MIP）问题，且随网络规模增长计算成本上升。论文提出当底层响应近似凸或凹时，输入凸神经网络（ICNN）在结构上是更优的代理，其凸架构带来两方面计算优势：ICNN-MIP的线性规划松弛更紧，有利情况下无整数间隙；且ICNN可通过ReLU的上境图表示实现基于LP的重构。研究还基于ICNN性质构建了盒域上最强连续松弛，并开发了直接在输入变量上分支的分支定界算法。</p>
+        <p class="why"><strong>为什么重要：</strong>为需要将神经网络嵌入优化流程的运筹学、工程优化从业者提供了计算效率更高的凸代理方案，可显著降低大规模问题的求解成本。</p>
+        <div class="tags">
+          <span class="tag">神经网络</span><span class="tag">优化算法</span><span class="tag">凸优化</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09707v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T15:11:22+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09870v1" target="_blank" rel="noopener nofollow">均匀稳定算法的无对数矩与泛化界</a></h3>
+        <p class="summary">均匀稳定性是控制学习算法泛化误差的经典工具，Bousquet等人2020年的研究将该问题转化为独立随机变量弱相互作用函数和的矩不等式，但其界包含额外的log n因子，并提出是否可以移除该因子的问题。论文给出了肯定的回答，证明了对于满足特定条件的弱相互作用函数和，其p阶矩上界为16pnβ+M√(2pn)，移除了之前界中的log n因子，且在已有下界覆盖的范围内与下界仅差常数因子。证明过程先在Rademacher立方体上建立估计，再通过双副本随机化论证推广到任意乘积分布。</p>
+        <p class="why"><strong>为什么重要：</strong>完善了学习理论中均匀稳定性与泛化误差的关系，为分析学习算法的泛化能力提供了更紧的理论界，对理解大模型泛化行为有潜在参考价值。</p>
+        <div class="tags">
+          <span class="tag">学习理论</span><span class="tag">泛化界</span><span class="tag">均匀稳定性</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09870v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:25:27+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09692v1" target="_blank" rel="noopener nofollow">含点质量数据的生成式时间序列模型评估研究</a></h3>
+        <p class="summary">生成式时间序列模型常用的基准数据中，很多序列在单个值上有很大概率质量（比如不下雨、无乘车请求、无零件订单）。研究发现仔细评估这类数据时存在多个问题：一是标准滚动原点协议可能在原子结构与数据集完全不同的窗口上评分，比如一个基准数据集42%为零值但评估窗口仅13%为零，另一个数据集47%对5%，这一问题会直接改变模型优劣结论。二是研究提出了一种对照方法，可在CRPS构造上不变的情况下破坏时间耦合，精确衡量时间耦合对所选统计量的贡献。三是在匹配协议下对七个模型、五个种子的基准测试显示，自回归hurdle模型在六个数据集中的五个上优于条件流模型，优势最高达153倍，而流模型自身的发生统计量在不同训练种子间差异最高达62%。四是五种不同发生统计量下的模型排序并不一致，其中两种无共同构造的统计量一致性最低。</p>
+        <p class="why"><strong>为什么重要：</strong>提醒时间序列生成领域研究者注意含点质量数据的评估偏差问题，避免因评估协议缺陷得出错误的模型优劣结论。</p>
+        <div class="tags">
+          <span class="tag">时间序列</span><span class="tag">生成模型</span><span class="tag">评估方法</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09692v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T14:57:36+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>模型进展</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09876v1" target="_blank" rel="noopener nofollow">能量结构化潜世界模型结合神经时间场实现物理一致的开放世界运动规划</a></h3>
+        <p class="summary">具身AI中物理一致的运动规划仍是核心挑战，现有潜世界模型学习的是无约束未来表示，物理知识隐式存在，难以复用，在不可预测的开放世界导航中可靠性不足。论文提出能量结构化潜世界模型（ELWM），其潜状态显式携带能量和动量，通过耗散和控制端口保证严格因果转移，在多模态RGB-D和惯性交互数据上训练可保证物理一致的预测。研究还构建了物理条件神经时间场（PC-NTF）将ELWM集成到到达时间场中形成导航策略，评测显示相比通用潜模型，0.8秒运动预测NRMSE从0.36降至0.29；相比主动神经时间场，导航成功率从81.3%提升至89.7%，物理碰撞率从12.1%降至5.8%。</p>
+        <p class="why"><strong>为什么重要：</strong>为具身智能、机器人导航领域提供了显式建模物理约束的世界模型方案，可有效提升开放环境下运动规划的安全性和成功率。</p>
+        <div class="tags">
+          <span class="tag">具身AI</span><span class="tag">世界模型</span><span class="tag">运动规划</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09876v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:31:18+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09819v1" target="_blank" rel="noopener nofollow">Macaron-V1：基于自改进和LoRA混合的开放持续学习智能体模型</a></h3>
+        <p class="summary">Macaron-V1是面向体验智能的开放智能体模型家族，支持在真实环境中从经验学习且部署后持续学习，系统围绕适配和协作两大目标设计。适配通过版本化模型-线束对的递归改进实现，协作采用Mixture-of-LoRA（MoL）架构，冻结基础模型并组合专家LoRA适配器，每轮用户请求选择一个LoRA。旗舰版Macaron-V1-Venti采用744B GLM-5.2基座加四个分别用于聊天、智能体、编码和GenUI的LoRA，基于Qwen3.6的50B版本Macaron-V1-Tall则面向本地部署。</p>
+        <p class="why"><strong>为什么重要：</strong>为需要部署后持续进化的智能体系统提供了MoL架构加递归自改进的完整技术路径，可作为企业级智能体持续学习方案的参考。</p>
+        <div class="tags">
+          <span class="tag">大语言模型</span><span class="tag">持续学习</span><span class="tag">智能体</span><span class="tag">LoRA</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09819v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:39:55+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://github.com/huggingface/transformers/releases/tag/v5.15.0" target="_blank" rel="noopener nofollow">Hugging Face transformers 库发布 v5.15.0 版本</a></h3>
+        <p class="summary">新版本新增Meta Muse Glimmer多模态模型，该模型面向智能体场景设计，从Muse蒸馏得到30B参数，采用Apache 2.0许可证，可本地部署用于编码、文档分析、个人助理等隐私敏感场景。Muse Glimmer是稠密30B参数模型，包含2B参数的ViT风格视觉感知编码器和28B参数的文本解码器。版本还新增了GraniteMoeSWA模型。</p>
+        <p class="why"><strong>为什么重要：</strong>开发者可直接通过transformers库快速接入开源的30B级多模态智能体模型，降低本地多模态智能体应用的部署门槛。</p>
+        <div class="tags">
+          <span class="tag">transformers</span><span class="tag">多模态模型</span><span class="tag">开源模型</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://github.com/huggingface/transformers/releases/tag/v5.15.0" target="_blank" rel="noopener nofollow">github_releases</a>
+          ｜原始发布时间：2026-08-10T10:28:13+00:00
+          ｜抓取时间：2026-08-12T08:19:09+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09921v1" target="_blank" rel="noopener nofollow">GENCO：嵌入电网分析开发框架的统一神经求解器</a></h3>
+        <p class="summary">基础模型正在改变业务流程，但在电力系统分析等需要严格物理一致性的工程领域应用仍很少。研究提出GENCO（几何神经校正优化器），这是用于稳态输电网分析的统一神经求解器，可在单一架构和共享网络表示下处理潮流（PF）、最优潮流（OPF）和状态估计（SE）。研究还开源了GridFM开发框架，标准化合成数据生成和训练流程，并发布了包含数百万个不同电网拓扑的PF和OPF场景的大规模数据集。评测显示，大规模PF场景下GENCO可恢复完整交流运行状态，速度比牛顿-拉夫逊法快30倍，仅为DC-PF运行时间的2倍；OPF场景下比IPOPT快85倍，同时改善了可行性、最优性和运行时间。</p>
+        <p class="why"><strong>为什么重要：</strong>为电力系统等工程领域的AI落地提供了兼顾物理一致性和计算效率的神经求解器方案，可显著提升电网分析的实时性和规模。</p>
+        <div class="tags">
+          <span class="tag">AI for Science</span><span class="tag">电力系统</span><span class="tag">神经求解器</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09921v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:57:49+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09775v1" target="_blank" rel="noopener nofollow">AirFlow：面向空气质量预测的上下文保持多速率状态建模方法</a></h3>
+        <p class="summary">准确的空气质量预测对公共卫生和城市环境管理至关重要，但由于污染物通道周期性和分布漂移不同，浓度轨迹同时存在多尺度依赖和快速变化，预测仍具挑战。现有方法改进了空间依赖学习和气象协变量建模，但所有污染物通道仍使用相同归一化规则和时间主干，共享潜表示无法适配通道特异性分布和不同变化速率。研究提出AirFlow，这是一种污染物感知的双流框架，包含两个新模块：统计引导的归一化路由机制，根据每种污染物的24小时自相关性和分布漂移选择归一化路径；分层双流状态模型，结合多尺度状态空间传播和可学习响应系数，通过门控双向交叉注意力交换信息并自适应融合表示。在多城市真实数据上的实验显示，AirFlow在36项指标对比中有34项达到最优，均方根误差最多比现有最优基线降低11.11%。</p>
+        <p class="why"><strong>为什么重要：</strong>为空气质量等多变量、多速率时序预测场景提供了更精准的建模框架，可直接应用于城市环境监测和预警系统。</p>
+        <div class="tags">
+          <span class="tag">时序预测</span><span class="tag">环境AI</span><span class="tag">深度学习</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09775v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:02:26+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>Agent 进展</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents" target="_blank" rel="noopener nofollow">NVIDIA Magpie TTS 支持构建低延迟多语言语音智能体，提供开放权重与完全部署控制</a></h3>
+        <p class="summary">NVIDIA发布Magpie TTS技术方案，支持构建低延迟多语言语音智能体，提供开放权重和完整的部署控制权，可满足自定义语音交互场景需求。</p>
+        <p class="why"><strong>为什么重要：</strong>为需要构建语音交互智能体的开发者提供了低延迟、可控部署的开源TTS选项，适合对数据隐私和响应速度有要求的企业级场景。</p>
+        <div class="tags">
+          <span class="tag">语音合成</span><span class="tag">智能体</span><span class="tag">NVIDIA</span><span class="tag">开源</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents" target="_blank" rel="noopener nofollow">hf_blog</a>
+          ｜原始发布时间：2026-08-10T16:25:36+00:00
+          ｜抓取时间：2026-08-12T08:18:18+08:00
+          ｜事实类型：事实（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09828v1" target="_blank" rel="noopener nofollow">多智能体AI安全是一个制度设计问题</a></h3>
+        <p class="summary">AI智能体越来越多地工作在有任务委派、信息流动、动作执行和资源共享规则的系统中，部署规则会改变集体行为。POLIS研究项目的首个论文研究了AI制度中哪些部分能产生安全效果及作用机制，通过包含5280个episode的固定研究套件开展实验。结果显示，详细的宪法提示词实现了0/384的实际违规率，感知溯源的可执行防护也实现了0/384的违规率（其中51/384次尝试被拦截，44/51次被拦截后最终安全完成）；本地状态防护的失败集中在普通转换改变可见策略但原始权限不变的场景，在匹配的洗钱场景中该防护的违规率为22/96，而溯源执法为0/96。</p>
+        <p class="why"><strong>为什么重要：</strong>为多智能体系统的安全治理提供了制度设计的实证依据，企业部署多智能体系统时可优先考虑溯源式权限管控和宪法级规则设计。</p>
+        <div class="tags">
+          <span class="tag">多智能体</span><span class="tag">AI安全</span><span class="tag">制度设计</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09828v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:47:01+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09802v1" target="_blank" rel="noopener nofollow">SWE-Bench ProMax：面向大规模多语言代码重构的智能体基准</a></h3>
+        <p class="summary">随着AI编码智能体承担更复杂的长周期软件工程任务，现有基准已快速饱和且评估质量受质疑：近期审计发现近60%的SWE-bench Verified未解决实例存在测试缺陷，且前沿模型可从训练数据中直接复现黄金补丁。代码重构需要跨多个文件的协调、行为保持的修改，是更难也更真实的智能体能力测试，但现有基准覆盖不足。研究推出SWE-Bench ProMax，这是由专家策划的多语言代码重构基准，包含170个来自真实提交的实例，覆盖Python、Java、TypeScript、Go、C、C++、Rust七种语言，每个实例都经过严格多阶段审核，平均每个实例修改11.4个文件、261.6行代码，规模远超现有基准。</p>
+        <p class="why"><strong>为什么重要：</strong>为代码智能体的能力评估提供了更高难度、更高质量的多语言重构基准，可更准确地衡量前沿编码智能体的真实工程能力。</p>
+        <div class="tags">
+          <span class="tag">代码智能体</span><span class="tag">基准测试</span><span class="tag">代码重构</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09802v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T16:23:19+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09706v1" target="_blank" rel="noopener nofollow">测试时缩放的CAD生成方法：无需验证器的共识选择</a></h3>
+        <p class="summary">大语言模型可根据自然语言描述生成参数化CAD程序，但单次采样结果往往出错，增加测试时计算量采样多个候选的前提是能选出优质结果，而生成时没有真实模型可用，现有系统通常需要视觉语言评判等独立验证器。论文研究了候选池本身是否足以提供有效选择信号，提出无需验证器的3D CAD共识选择方法：采样N个参数化CAD程序，编译为3D模型，返回与其余候选最一致的结果。该方法无需训练，兼容现有CAD智能体。在前沿CAD生成方法的候选池上测试显示，几何共识在所有三个几何指标上都优于该方法的验证器，拓扑共识在拓扑指标上与之相当；在所有测试的LLM和提示词变体上，几何共识都比随机选择提升了几何准确率，Chamfer距离降低1-10%。</p>
+        <p class="why"><strong>为什么重要：</strong>为文本生成CAD等缺乏现成验证器的生成任务提供了低成本的测试时质量提升方案，无需额外训练验证模型即可提升生成效果。</p>
+        <div class="tags">
+          <span class="tag">CAD生成</span><span class="tag">测试时计算</span><span class="tag">生成式AI</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09706v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T15:10:44+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>AI 应用</h2>
+    
+    
+      <p class="empty">今日无重大更新。</p>
+    
+  </section>
+  
+  <section class="category-block">
+    <h2>可选观察</h2>
+    
+    
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09867v1" target="_blank" rel="noopener nofollow">研究发现可从专有大模型API中窃取推理轨迹的漏洞</a></h3>
+        <p class="summary">主流大模型提供商为保护知识产权和限制信息泄露，将逐步推理（思维链）轨迹以加密文本块形式返回客户端，客户端后续请求时再回传，而非仅在服务端存储。研究发现一类架构漏洞：同一提供商生态内的加密推理块在不同会话、用户、模型间完全兼容且可互换，攻击者可将来自强模型的加密推理块注入同提供商的弱安全模型中，迫使弱模型解密并输出明文推理轨迹，无需直接破解强模型。该漏洞可实现四类攻击：绕过反蒸馏机制提取专有模型推理（已在Anthropic、OpenAI、Google的模型上验证）、大规模提取公开日志中的隐私数据（从公开仓库抓取的315320个推理块中恢复出367个PII信息和182组凭证）、泄露隐藏的危险信息等。</p>
+        <p class="why"><strong>为什么重要：</strong>为使用加密思维链的大模型服务商敲响安全警钟，也提醒开发者不要公开包含加密推理块的会话日志，避免隐私和知识产权泄露风险。</p>
+        <div class="tags">
+          <span class="tag">大模型安全</span><span class="tag">推理安全</span><span class="tag">API安全</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09867v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:24:50+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09855v1" target="_blank" rel="noopener nofollow">观点：智能体自动研究本质是模糊测试</a></h3>
+        <p class="summary">自主研究智能体生成实验的速度已超过研究人员验证的速度，当前主流的“生成-排序”范式忽略了反馈稀疏的问题。论文提出自动研究智能体应遵循灰盒模糊测试的控制循环：提出候选方案、执行、观察反馈、选择下一步尝试，而非仅对完成的运行结果排序。自动研究需要两项核心能力：一是每个实验在最终科学验证前就能提供廉价、密集的认知进展信号，二是该信号能决定下一步干预方向，让智能体进行搜索而非重复采样。由于优化的进展信号是引导而非最终判定，仍需通过不受自适应复用影响的证据来做最终验证。</p>
+        <p class="why"><strong>为什么重要：</strong>为研发自动研究智能体的团队提供了范式转变的思路，从单纯提升生成和排序能力转向构建反馈驱动的搜索架构，有望提升科研自动化的效率和产出质量。</p>
+        <div class="tags">
+          <span class="tag">AI科研</span><span class="tag">智能体</span><span class="tag">模糊测试</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09855v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:13:02+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：编辑判断（A 级来源）
+        </p>
+      </article>
+      
+      <article class="item-card">
+        <h3><a href="https://arxiv.org/abs/2608.09900v1" target="_blank" rel="noopener nofollow">解码级禁忌：大语言模型鲁棒性的诊断压力测试</a></h3>
+        <p class="summary">大语言模型评估通常关注标称条件下的性能，造成模型仅在狭窄优化的生成走廊内表现良好的能力错觉，而实际部署中复杂的系统提示、安全护栏和结构约束会不断迫使模型偏离标称路径，导致基准分数与部署性能脱节。研究提出解码级禁忌（Decoding-Level Taboo），这是一种零提示的诊断压力测试，在运行时直接在logit空间干预，动态屏蔽词边界处的主要候选token，迫使模型迂回表达。对多个开源模型家族的评测显示，偏离标称路径的鲁棒性受参数规模和训练后指令对齐的显著影响，通常随模型规模和对齐程度提升而增强。</p>
+        <p class="why"><strong>为什么重要：</strong>为大模型鲁棒性评估提供了新的测试范式，可用于部署前的模型可靠性审计、安全护栏压力测试，以及生成多样化合成数据集。</p>
+        <div class="tags">
+          <span class="tag">大模型评估</span><span class="tag">鲁棒性</span><span class="tag">压力测试</span>
+        </div>
+        <p class="src">
+          来源：<a href="https://arxiv.org/abs/2608.09900v1" target="_blank" rel="noopener nofollow">arxiv</a>
+          ｜原始发布时间：2026-08-10T17:47:24+00:00
+          ｜抓取时间：2026-08-12T08:18:15+08:00
+          ｜事实类型：发布方主张（A 级来源）
+        </p>
+      </article>
+      
+    
+  </section>
+  
+
+  <nav class="daily-nav">
+    <a href="https://orcaxnet.github.io/ai-daily-report/daily/2026-08-10.html">‹ 上一期（2026-08-10）</a>
+    
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。</p>
+    <p>本页内容由 AI 辅助整理生成，信息以原始来源为准。发现错误请通过 <a href="https://orcaxnet.github.io/ai-daily-report/corrections.html">更正入口</a> 反馈。统计分析仅使用匿名聚合数据，不采集个人身份信息。</p>
+  </div>
+</footer>
+</body>
+</html>
