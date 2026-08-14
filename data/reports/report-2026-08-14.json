@@ -1,0 +1,242 @@
+{
+  "report_date": "2026-08-14",
+  "generated_at": "2026-08-14T08:03:01+08:00",
+  "content_window_start": "2026-08-13T06:30:00+08:00",
+  "content_window_end": "2026-08-14T06:30:00+08:00",
+  "item_count": 8,
+  "category_counts": {
+    "基础理论": 0,
+    "模型进展": 3,
+    "Agent 进展": 1,
+    "AI 应用": 3,
+    "可选观察": 1
+  },
+  "corrections": [],
+  "data_cutoff": "2026-08-14T06:30:00+08:00",
+  "ai_disclosure": "本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。",
+  "items": [
+    {
+      "item_id": "ae4c5a74bf01",
+      "title_cn": "DeepMind 发布 Gemini 3.7 Flash 模型",
+      "summary_cn": "DeepMind 正式推出 Gemini 3.7 Flash 模型，相关信息发布于谷歌官方博客。目前原文未披露具体性能参数与功能细节。",
+      "why_it_matters_cn": "Gemini 系列新成员的推出可能影响大模型市场的性价比格局，从业者需关注其后续公布的能力、定价与适用场景。",
+      "tags": [
+        "Gemini",
+        "大模型",
+        "DeepMind"
+      ],
+      "category": "模型进展",
+      "source_name": "deepmind",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "source_published_at": "2026-08-13T17:04:18+00:00",
+      "collected_at": "2026-08-14T08:01:42+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 67.0,
+      "dedup_key": "2fece56d392def73",
+      "title_original": "Introducing Gemini 3.7 Flash"
+    },
+    {
+      "item_id": "6f1378d857e4",
+      "title_cn": "NVIDIA 推出 Magpie TTS 开源权重，支持低延迟多语言语音 Agent 构建",
+      "summary_cn": "NVIDIA 在 Hugging Face 博客发布 Magpie TTS 技术方案，提供开源权重与完整部署控制权，可用于构建低延迟多语言语音智能体。该方案面向需要自主掌控部署流程的开发者与企业。",
+      "why_it_matters_cn": "开源多语言低延迟 TTS 方案降低了语音 Agent 的开发门槛，对面向全球市场的语音交互应用有直接参考价值。",
+      "tags": [
+        "语音合成",
+        "NVIDIA",
+        "开源",
+        "智能体"
+      ],
+      "category": "AI 应用",
+      "source_name": "hf_blog",
+      "source_url": "https://huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents",
+      "source_published_at": "2026-08-10T16:25:36+00:00",
+      "collected_at": "2026-08-14T08:01:39+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 74.0,
+      "dedup_key": "24c196d3a20da600",
+      "title_original": "Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS"
+    },
+    {
+      "item_id": "d4055f0094c3",
+      "title_cn": "Allen AI 推出 OlmoEarth 嵌入向量，支持自定义导出用于下游分析",
+      "summary_cn": "Allen AI 在 Hugging Face 博客发布 OlmoEarth 嵌入向量功能，用户可通过 OlmoEarth Studio 导出自定义嵌入，用于下游分析任务。该功能面向需要定制化嵌入能力的研究与应用场景。",
+      "why_it_matters_cn": "自定义嵌入导出能力为地理或多模态相关的下游分析提供了更灵活的工具，相关领域从业者可评估其适配性。",
+      "tags": [
+        "嵌入向量",
+        "Allen AI",
+        "开源工具"
+      ],
+      "category": "模型进展",
+      "source_name": "hf_blog",
+      "source_url": "https://huggingface.co/blog/allenai/olmoearth-embeddings",
+      "source_published_at": "2026-08-12T16:14:36+00:00",
+      "collected_at": "2026-08-14T08:01:39+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 81.0,
+      "dedup_key": "2ef5e1223f1c5b82",
+      "title_original": "Introducing OlmoEarth embeddings: Custom embedding exports from OlmoEarth Studio for downstream analysis"
+    },
+    {
+      "item_id": "c1aad4d35dc8",
+      "title_cn": "OpenAI 任命 Dali Rajic 为首席营收官",
+      "summary_cn": "OpenAI 正式任命 Dali Rajic 为首席营收官，负责领导全球营收团队，帮助企业充分实现 AI 的价值。该任命于 2026 年 8 月 13 日对外公布。",
+      "why_it_matters_cn": "核心营收负责人的任命显示 OpenAI 正加速企业级商业化落地，国内 To B AI 厂商可关注其后续商业化策略变化。",
+      "tags": [
+        "OpenAI",
+        "人事变动",
+        "商业化"
+      ],
+      "category": "可选观察",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/dali-rajic-chief-revenue-officer/",
+      "source_published_at": "2026-08-13T09:00:00+00:00",
+      "collected_at": "2026-08-14T08:01:40+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 72.0,
+      "dedup_key": "020d12123cab5294",
+      "title_original": "OpenAI appoints Dali Rajic as Chief Revenue Officer"
+    },
+    {
+      "item_id": "416eae4a44b5",
+      "title_cn": "OpenAI Daybreak 网络安全模型登陆 AWS Amazon Bedrock",
+      "summary_cn": "OpenAI 与 AWS 合作，将 Daybreak 网络安全能力通过 Amazon Bedrock 开放，用于支持企业级安全工作流。该服务面向有网络安全 AI 需求的企业客户。",
+      "why_it_matters_cn": "前沿网络安全模型通过主流云平台分发，标志着垂直领域大模型的企业级落地路径进一步清晰，安全行业从业者可关注其接入成本与效果。",
+      "tags": [
+        "网络安全",
+        "OpenAI",
+        "AWS",
+        "企业服务"
+      ],
+      "category": "AI 应用",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/daybreak-models-are-now-available-on-aws/",
+      "source_published_at": "2026-08-11T10:00:00+00:00",
+      "collected_at": "2026-08-14T08:01:40+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 65.0,
+      "dedup_key": "ef6e4e8084eb5374",
+      "title_original": "Daybreak models are now available on AWS"
+    },
+    {
+      "item_id": "8bbda889b6fc",
+      "title_cn": "OpenAI 向授权合作伙伴开放前沿网络安全模型能力",
+      "summary_cn": "OpenAI 宣布通过审核的 Daybreak 合作伙伴可使用其前沿网络安全模型，为客户提供经过授权、受治理的网络安全服务。该举措旨在扩大前沿网络安全能力的可信覆盖范围。",
+      "why_it_matters_cn": "授权合作伙伴模式兼顾了前沿模型的安全管控与商业化推广，国内垂直大模型厂商可参考其合规落地思路。",
+      "tags": [
+        "网络安全",
+        "OpenAI",
+        "合作生态"
+      ],
+      "category": "AI 应用",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/",
+      "source_published_at": "2026-08-10T10:00:00+00:00",
+      "collected_at": "2026-08-14T08:01:40+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 65.0,
+      "dedup_key": "83111a9782d1ef54",
+      "title_original": "Putting frontier cyber models in more trusted hands"
+    },
+    {
+      "item_id": "93419333b628",
+      "title_cn": "Meta 推出 Muse Glimmer：本地运行的多模态开源 Agent 模型",
+      "summary_cn": "Meta 推出 Muse Glimmer 模型，具备本地运行、智能体能力、多模态处理与开源的特性。相关信息发布于 Hugging Face 博客。",
+      "why_it_matters_cn": "本地开源多模态 Agent 模型为隐私敏感场景的智能体应用提供了新选择，端侧 AI 与 Agent 开发者可重点评估。",
+      "tags": [
+        "Meta",
+        "多模态",
+        "开源",
+        "智能体"
+      ],
+      "category": "Agent 进展",
+      "source_name": "hf_blog",
+      "source_url": "https://huggingface.co/blog/muse-glimmer",
+      "source_published_at": "2026-08-10T00:00:00+00:00",
+      "collected_at": "2026-08-14T08:01:39+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 62.0,
+      "dedup_key": "fbff24d9f7427e3a",
+      "title_original": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source"
+    },
+    {
+      "item_id": "51e7ebafd731",
+      "title_cn": "OpenAI 预览 Ultrafast 模式：GPT-5.6 Sol 速度最高提升 14 倍",
+      "summary_cn": "OpenAI 推出 API 新服务层级 Ultrafast 的预览版本，由 Cerebras 提供算力支持，运行 GPT-5.6 Sol 时速度最高可达常规版本的 14 倍，输出速度最高达每秒 750 个 token。",
+      "why_it_matters_cn": "超高推理速度的 API 层级将显著提升实时性要求高的应用体验，开发者与企业需评估其定价与场景适配性，以优化自身产品的响应表现。",
+      "tags": [
+        "OpenAI",
+        "推理加速",
+        "API",
+        "GPT"
+      ],
+      "category": "模型进展",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/previewing-ultrafast/",
+      "source_published_at": "2026-08-13T10:00:00+00:00",
+      "collected_at": "2026-08-14T08:01:40+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 61.0,
+      "dedup_key": "d682a8bdf52899df",
+      "title_original": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed"
+    }
+  ],
+  "empty_categories": [
+    "基础理论"
+  ],
+  "insufficient_note": null,
+  "grace_note": "本日标准内容窗口（2026-08-13T06:30:00+08:00 → 2026-08-14T06:30:00+08:00）内达标内容不足，已向前回看至 2026-08-10T06:30:00+08:00 补充近期动态。",
+  "generation": {
+    "llm_usage": {
+      "calls": 1,
+      "tokens": 2443
+    },
+    "collection_stats": {
+      "arxiv": {
+        "ok": false,
+        "count": 0,
+        "error": "arxiv fetch failed: GET http://export.arxiv.org/api/query?search_query=cat:cs.AI OR cat:cs.CL OR cat:cs.LG&start=0&max_results=60&sortBy=submittedDate&sortOrder=descending: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)"
+      },
+      "hf_papers": {
+        "ok": true,
+        "count": 40
+      },
+      "hf_blog": {
+        "ok": true,
+        "count": 40
+      },
+      "openai": {
+        "ok": true,
+        "count": 40
+      },
+      "deepmind": {
+        "ok": true,
+        "count": 40
+      },
+      "google_ai": {
+        "ok": true,
+        "count": 20
+      },
+      "anthropic": {
+        "ok": true,
+        "count": 14
+      },
+      "mistral": {
+        "ok": false,
+        "count": 0,
+        "error": "html_news list fetch failed: GET https://mistral.ai/news/: HTTPSConnectionPool(host='mistral.ai', port=443): Max retries exceeded with url: /news/ (Caused by ConnectTimeoutError(<HTTPSConnection(host='mistral.ai', port=443) at 0x108e60e10>, 'Connection to mistral.ai timed out. (connect timeout=15)'))"
+      },
+      "github_releases": {
+        "ok": true,
+        "count": 0
+      }
+    }
+  }
+}
