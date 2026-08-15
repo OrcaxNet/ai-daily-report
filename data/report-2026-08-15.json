@@ -1,0 +1,281 @@
+{
+  "report_date": "2026-08-15",
+  "generated_at": "2026-08-15T08:03:29+08:00",
+  "content_window_start": "2026-08-14T06:30:00+08:00",
+  "content_window_end": "2026-08-15T06:30:00+08:00",
+  "item_count": 10,
+  "category_counts": {
+    "基础理论": 0,
+    "模型进展": 2,
+    "Agent 进展": 0,
+    "AI 应用": 6,
+    "可选观察": 2
+  },
+  "corrections": [],
+  "data_cutoff": "2026-08-15T06:30:00+08:00",
+  "ai_disclosure": "本日报由 AI 辅助自动整理生成：内容来自公开来源白名单，经自动采集、评分与 AI 中文改写。信息仅供参考，以原始来源为准。",
+  "items": [
+    {
+      "item_id": "37fae1c9b49e",
+      "title_cn": "DeepMind 发布 Gemini 3.7 Flash 模型",
+      "summary_cn": "Google DeepMind 于 2026 年 8 月 13 日正式发布 Gemini 3.7 Flash 模型。官方未在公告摘要中披露具体性能参数与功能细节。",
+      "why_it_matters_cn": "Gemini 系列轻量版模型迭代可能影响开发者在低延迟、高吞吐场景的选型，需关注后续性能与定价信息。",
+      "tags": [
+        "Gemini",
+        "模型发布"
+      ],
+      "category": "模型进展",
+      "source_name": "deepmind",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "source_published_at": "2026-08-13T17:04:18+00:00",
+      "collected_at": "2026-08-15T08:01:51+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 67.0,
+      "dedup_key": "2fece56d392def73",
+      "title_original": "Introducing Gemini 3.7 Flash"
+    },
+    {
+      "item_id": "d376b1ef01e0",
+      "title_cn": "openai-python SDK 发布 3.0.0 重大版本，默认切换至 HTTPX2",
+      "summary_cn": "OpenAI Python SDK 3.0.0 于 2026 年 8 月 12 日发布，属于破坏性更新版本。该版本将 HTTPX2 设为默认 HTTP 客户端，不再自动安装 httpx 依赖；使用自定义 HTTPX 客户端、传输层或配置的应用需迁移至 HTTPX2 对应实现，或使用临时运行时旧版兼容方案。",
+      "why_it_matters_cn": "使用 openai-python 的开发者需评估 HTTP 客户端依赖的迁移成本，避免升级后业务接口异常。",
+      "tags": [
+        "OpenAI",
+        "SDK",
+        "开发者工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/openai/openai-python/releases/tag/v3.0.0",
+      "source_published_at": "2026-08-12T01:54:46+00:00",
+      "collected_at": "2026-08-15T08:02:34+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "33ae159b6244ab72",
+      "title_original": "openai-python 发布 v3.0.0"
+    },
+    {
+      "item_id": "6e84ca5b1f5b",
+      "title_cn": "Anthropic Python SDK 发布 0.122.0，新增 dream 创建输出行为配置",
+      "summary_cn": "Anthropic Python SDK 0.122.0 于 2026 年 8 月 13 日发布。功能层面为 dream 创建新增 output_behavior 参数，支持新建记忆存储或原地更新输入存储；修复层面包括异步客户端中 Bedrock/AWS 的 SigV4 签名移出事件循环、Bedrock 暴露 beta.messages 相关解析与流式接口等问题。",
+      "why_it_matters_cn": "使用 Anthropic 记忆功能与 AWS Bedrock 部署的开发者可关注相关能力与稳定性优化，评估升级必要性。",
+      "tags": [
+        "Anthropic",
+        "SDK",
+        "开发者工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.122.0",
+      "source_published_at": "2026-08-13T18:35:49+00:00",
+      "collected_at": "2026-08-15T08:02:35+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "7939ff99d22245da",
+      "title_original": "anthropic-sdk-python 发布 v0.122.0"
+    },
+    {
+      "item_id": "83b2decd9fc7",
+      "title_cn": "LangChain 发布 langchain-openrouter 0.2.8，修复成本元数据保留问题",
+      "summary_cn": "LangChain 于 2026 年 8 月 14 日发布 langchain-openrouter 0.2.8 版本。该版本修复了使用块中成本元数据丢失的问题，新增响应元数据中保留提供商信息的能力，并多次刷新模型配置数据。",
+      "why_it_matters_cn": "基于 OpenRouter 做多模型调度的开发者可升级版本，确保成本统计与提供商信息的准确性。",
+      "tags": [
+        "LangChain",
+        "OpenRouter",
+        "开发者工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openrouter%3D%3D0.2.8",
+      "source_published_at": "2026-08-14T19:03:45+00:00",
+      "collected_at": "2026-08-15T08:02:40+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "3394b996dfd2e2a6",
+      "title_original": "langchain 发布 langchain-openrouter==0.2.8"
+    },
+    {
+      "item_id": "f398a7a2823a",
+      "title_cn": "LangChain 发布 langchain-openai 1.5.1，修复流式加密推理保留问题",
+      "summary_cn": "LangChain 于 2026 年 8 月 14 日发布 langchain-openai 1.5.1 版本。该版本修复了流式传输中加密推理内容丢失的问题，同时在 CI 环境中新增对 LangSmith 网关的支持。",
+      "why_it_matters_cn": "使用 OpenAI 推理模型流式输出的 LangChain 用户需升级版本，避免加密推理内容缺失。",
+      "tags": [
+        "LangChain",
+        "OpenAI",
+        "开发者工具"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.5.1",
+      "source_published_at": "2026-08-14T15:47:44+00:00",
+      "collected_at": "2026-08-15T08:02:40+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "1b455ae3461e14ce",
+      "title_original": "langchain 发布 langchain-openai==1.5.1"
+    },
+    {
+      "item_id": "e6d2377c42ef",
+      "title_cn": "LangChain 发布 langchain-core 1.5.5，修复多项工具与流式相关问题",
+      "summary_cn": "LangChain 于 2026 年 8 月 14 日发布 langchain-core 1.5.5 版本。该版本修复了批量迭代一致性、工具输入 Pydantic 别名校验、块合并、异步路径模型校验、工具描述处理、缓存处理、提示模板列表值处理等十余项问题，并将 httpx 列为显式依赖。",
+      "why_it_matters_cn": "langchain-core 作为基础依赖的修复版本涉及多个核心能力，开发者可根据自身使用场景评估升级以提升稳定性。",
+      "tags": [
+        "LangChain",
+        "开发者工具",
+        "基础组件"
+      ],
+      "category": "AI 应用",
+      "source_name": "github_releases",
+      "source_url": "https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.5.5",
+      "source_published_at": "2026-08-14T18:56:41+00:00",
+      "collected_at": "2026-08-15T08:02:40+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 81.0,
+      "dedup_key": "dd1308189455e8f6",
+      "title_original": "langchain 发布 langchain-core==1.5.5"
+    },
+    {
+      "item_id": "3fa0d9950fab",
+      "title_cn": "OpenAI 任命 Dali Rajic 为首席营收官",
+      "summary_cn": "OpenAI 于 2026 年 8 月 13 日宣布任命 Dali Rajic 为首席营收官（CRO）。其职责为领导全球营收团队，帮助企业充分实现 AI 的业务价值。",
+      "why_it_matters_cn": "核心营收负责人的任命可能预示 OpenAI 将加速企业级商业化布局，相关客户与合作伙伴可关注后续策略调整。",
+      "tags": [
+        "OpenAI",
+        "人事变动",
+        "商业化"
+      ],
+      "category": "可选观察",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/dali-rajic-chief-revenue-officer/",
+      "source_published_at": "2026-08-13T09:00:00+00:00",
+      "collected_at": "2026-08-15T08:01:50+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 72.0,
+      "dedup_key": "020d12123cab5294",
+      "title_original": "OpenAI appoints Dali Rajic as Chief Revenue Officer"
+    },
+    {
+      "item_id": "740e0482d490",
+      "title_cn": "Anthropic 公布 Claude 文本水印机制，未来模型将默认支持",
+      "summary_cn": "Anthropic 于 2026 年 8 月 14 日发布文章说明 Claude 文本水印的工作原理。未来 Claude 模型生成的文本将包含水印，用于判断文本由 Claude 生成的可能性；该调整是为符合欧盟 AI 法案要求，多家主流 AI 提供商也在实施类似方案。",
+      "why_it_matters_cn": "文本水印将成为 AI 生成内容的合规标配，内容平台、企业用户需提前评估对内容检测与工作流的影响。",
+      "tags": [
+        "AI 安全",
+        "合规",
+        "Claude"
+      ],
+      "category": "可选观察",
+      "source_name": "anthropic",
+      "source_url": "https://www.anthropic.com/news/claude-text-watermark",
+      "source_published_at": "2026-08-14T00:00:00",
+      "collected_at": "2026-08-15T08:02:00+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 67.0,
+      "dedup_key": "5a93d893b65c1181",
+      "title_original": "Aug 14, 2026 Announcements How Claude’s text watermark works"
+    },
+    {
+      "item_id": "4c23312279e1",
+      "title_cn": "OpenAI Daybreak 网络安全模型上线 AWS Bedrock",
+      "summary_cn": "OpenAI 与 AWS 合作，将 Daybreak 网络安全能力通过 Amazon Bedrock 开放提供，用于支持企业安全工作流。该消息于 2026 年 8 月 11 日正式公布。",
+      "why_it_matters_cn": "企业安全团队可通过 Bedrock 快速接入 Daybreak 能力，简化在 AWS 生态内的 AI 安全工具部署。",
+      "tags": [
+        "OpenAI",
+        "AWS",
+        "网络安全"
+      ],
+      "category": "AI 应用",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/daybreak-models-are-now-available-on-aws/",
+      "source_published_at": "2026-08-11T10:00:00+00:00",
+      "collected_at": "2026-08-15T08:01:50+08:00",
+      "source_grade": "A",
+      "fact_type": "事实",
+      "score": 65.0,
+      "dedup_key": "ef6e4e8084eb5374",
+      "title_original": "Daybreak models are now available on AWS"
+    },
+    {
+      "item_id": "4e65998b20b9",
+      "title_cn": "OpenAI 推出 Ultrafast API 层级，GPT-5.6 Sol 速度最高提升 14 倍",
+      "summary_cn": "OpenAI 于 2026 年 8 月 13 日公布 Ultrafast API 服务层级预览，由 Cerebras 提供算力支持。该层级运行 GPT-5.6 Sol 模型时速度最高可达常规版本的 14 倍，输出速度最高达每秒 750 个 token。",
+      "why_it_matters_cn": "高吞吐低延迟的 API 层级为实时交互、批量生成等场景提供新选项，开发者可关注其定价与可用性以优化成本与体验。",
+      "tags": [
+        "OpenAI",
+        "API",
+        "推理加速"
+      ],
+      "category": "模型进展",
+      "source_name": "openai",
+      "source_url": "https://openai.com/index/previewing-ultrafast/",
+      "source_published_at": "2026-08-13T10:00:00+00:00",
+      "collected_at": "2026-08-15T08:01:50+08:00",
+      "source_grade": "A",
+      "fact_type": "发布方主张",
+      "score": 61.0,
+      "dedup_key": "d682a8bdf52899df",
+      "title_original": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed"
+    }
+  ],
+  "empty_categories": [
+    "基础理论",
+    "Agent 进展"
+  ],
+  "insufficient_note": null,
+  "grace_note": "本日标准内容窗口（2026-08-14T06:30:00+08:00 → 2026-08-15T06:30:00+08:00）内达标内容不足，已向前回看至 2026-08-11T06:30:00+08:00 补充近期动态。",
+  "generation": {
+    "llm_usage": {
+      "calls": 1,
+      "tokens": 4272
+    },
+    "collection_stats": {
+      "arxiv": {
+        "ok": false,
+        "count": 0,
+        "error": "arxiv fetch failed: GET http://export.arxiv.org/api/query?search_query=cat:cs.AI OR cat:cs.CL OR cat:cs.LG&start=0&max_results=60&sortBy=submittedDate&sortOrder=descending: HTTPSConnectionPool(host='export.arxiv.org', port=443): Read timed out. (read timeout=15)"
+      },
+      "hf_papers": {
+        "ok": false,
+        "count": 0,
+        "error": "hf_papers fetch failed: GET https://huggingface.co/api/papers?limit=40&days=3: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/papers?limit=40&days=3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x10b203c50>, 'Connection to huggingface.co timed out. (connect timeout=15)'))"
+      },
+      "hf_blog": {
+        "ok": false,
+        "count": 0,
+        "error": "rss fetch failed: GET https://huggingface.co/blog/feed.xml: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /blog/feed.xml (Caused by ConnectTimeoutError(<HTTPSConnection(host='huggingface.co', port=443) at 0x10b2e82d0>, 'Connection to huggingface.co timed out. (connect timeout=15)'))"
+      },
+      "openai": {
+        "ok": true,
+        "count": 40
+      },
+      "deepmind": {
+        "ok": true,
+        "count": 40
+      },
+      "google_ai": {
+        "ok": true,
+        "count": 20
+      },
+      "anthropic": {
+        "ok": true,
+        "count": 14
+      },
+      "mistral": {
+        "ok": true,
+        "count": 15
+      },
+      "github_releases": {
+        "ok": true,
+        "count": 6
+      }
+    }
+  }
+}
